@@ -60,12 +60,11 @@ Functional local prototype in Google Colab; retrieval accuracy and identificatio
 
 Use these milestones to guide your work. Your team will create a **GitHub Projects board** to track tasks within each milestone.
 
-Use these milestones to guide your work. Your team will create a GitHub Projects board to track tasks within each milestone. 
-| Month | Milestone | Key Activities | 
-|-------|-----------|----------------| 
-| September | Data Exploration & Preprocessing | Ingest JSON/PDF research data, implement text extraction pipelines, and establish cleaning routines to handle noise and formatting anomalies in ArXiv documents. | 
-| October | Feature Engineering & Baseline Modeling | Implement semantic chunking and index documents into ChromaDB, establishing a baseline RAG retrieval system using LangChain. | | November | Model Optimization & Evaluation | Integrate LangGraph for agentic routing, implement FlashRank for result refinement, and conduct hyperparameter tuning to optimize retrieval accuracy. | 
-| December | Insights, Deliverables & Presentation | Finalize the memo generation module, validate system outputs against ground-truth datasets, and prepare the final technical handoff and demo. |
+| Month | Milestone | Key Activities |
+| :--- | :--- | :--- |
+| September | Data Foundations, Scoping & Baseline Models | • Onboard project dataset, perform Exploratory Data Analysis (EDA), and clean raw inputs.<br>• Subsample large datasets (to < 1 GB) to stay within Google Colab free-tier memory boundaries.<br>• Establish baseline retrieval architectures (for RAG) or classical baseline classifiers (TF-IDF / Logistic Regression).<br>• Define target metrics (PR-AUC, F1-score, Top-k accuracy) and set up evaluation benchmark queries. |
+| October | Core Pipeline Development & Model Optimization | • Build core ML/RAG pipelines (chunking, semantic embeddings, vector indexing).<br>• Implement advanced algorithms (XGBoost, Random Forests, or pre-trained transformers like DistilBERT).<br>• Engineer feature sets, perform hyperparameter tuning, and integrate reranking or validation logic.<br>• Conduct initial accuracy testing and evaluate failure cases. |
+| November / December | Model Refinement, Integration & Deliverable Package | • Optimize retrieval quality, fine-tune prompt engineering, and enforce output guardrails.<br>• Integrate model explainability layers (SHAP values) and conduct equity or bias assessments.<br>• Package project into a clean, reproducible GitHub repository with a localized Streamlit UI demo.<br>• Finalize project documentation, stakeholder presentation pitch decks, and technical reports. |
 
 
 
