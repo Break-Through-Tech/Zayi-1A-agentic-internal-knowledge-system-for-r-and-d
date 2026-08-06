@@ -61,7 +61,8 @@ Functional local prototype in Google Colab; retrieval accuracy and identificatio
 Use these milestones to guide your work. Your team will create a **GitHub Projects board** to track tasks within each milestone.
 
 Use these milestones to guide your work. Your team will create a GitHub Projects board to track tasks within each milestone. 
-| Month | Milestone | Key Activities | |-------|-----------|----------------| 
+| Month | Milestone | Key Activities | 
+|-------|-----------|----------------| 
 | September | Data Exploration & Preprocessing | Ingest JSON/PDF research data, implement text extraction pipelines, and establish cleaning routines to handle noise and formatting anomalies in ArXiv documents. | 
 | October | Feature Engineering & Baseline Modeling | Implement semantic chunking and index documents into ChromaDB, establishing a baseline RAG retrieval system using LangChain. | | November | Model Optimization & Evaluation | Integrate LangGraph for agentic routing, implement FlashRank for result refinement, and conduct hyperparameter tuning to optimize retrieval accuracy. | 
 | December | Insights, Deliverables & Presentation | Finalize the memo generation module, validate system outputs against ground-truth datasets, and prepare the final technical handoff and demo. |
