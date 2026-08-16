@@ -82,15 +82,27 @@ Use these milestones to guide your work. Your team will create a **GitHub Projec
 
 ## 📊 Dataset
 
-**Name and Source:** Curated subset of ArXiv Machine Learning research papers (JSON and PDF format) from Kaggle  
-**Format:** JSON, PDF  
-**Size:** 1gb to 5gb  
-**Location:** https://www.kaggle.com/datasets/Cornell-University/arxiv
+**Name and Source:** Curated subset of ArXiv Machine Learning research papers
+**Format:** JSON (Pre-extracted Clean Text & Metadata) and PDF (Full-Text Documents)
+**Size:** ~18 MB total (10 core full-text papers)
+**Location:** Available directly in the repository's [`data/`](data/) folder (see `data/curated_papers_text.json`).
 
 ### Key Details
-- [Brief description of what's in the data]
-- [Any known limitations or preprocessing needed]
-- [Link to data dictionary or documentation, if available]
+- **Curated Document Set:** The team will build and benchmark the knowledge system using these 10 foundational R&D research papers:
+  1. [Lewis et al., 2020 - Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks](https://arxiv.org/pdf/2005.11401)
+  2. [Gao et al., 2023 - Retrieval-Augmented Generation for Large Language Models: A Survey](https://arxiv.org/pdf/2312.10997)
+  3. [Asai et al., 2023 - Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection](https://arxiv.org/pdf/2310.11511)
+  4. [Yan et al., 2024 - Corrective Retrieval Augmented Generation (CRAG)](https://arxiv.org/pdf/2401.15884)
+  5. [Yao et al., 2022 - ReAct: Synergizing Reasoning and Acting in Language Models](https://arxiv.org/pdf/2210.03629)
+  6. [Liu et al., 2023 - Lost in the Middle: How Language Models Use Long Contexts](https://arxiv.org/pdf/2307.03172)
+  7. [Es et al., 2023 - RAGAS: Automated Evaluation of Retrieval Augmented Generation](https://arxiv.org/pdf/2309.15217)
+  8. [Hu et al., 2021 - LoRA: Low-Rank Adaptation of Large Language Models](https://arxiv.org/pdf/2106.09685)
+  9. [Dao et al., 2022 - FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness](https://arxiv.org/pdf/2205.14135)
+  10. [Karpukhin et al., 2020 - Dense Passage Retrieval for Open-Domain Question Answering](https://arxiv.org/pdf/2004.04906)
+- **Dual-Track Data Readiness & Preprocessing:**
+  - **Pre-Extracted Text (`data/curated_papers_text.json`):** Cleaned, sectioned text is provided so students can immediately focus on text cleaning, semantic chunking, and embedding without getting blocked by PDF parsing edge cases.
+  - **Raw PDFs:** Available via direct links for students who want hands-on experience parsing complex 2-column technical documents and tracking exact page citations.
+- **Data Documentation:** Official ArXiv API and metadata documentation is available on the [Cornell ArXiv User Guide](https://info.arxiv.org/help/api/index.html).
 
 ---
 
@@ -99,10 +111,20 @@ Use these milestones to guide your work. Your team will create a **GitHub Projec
 **ML Problem Type:** Natural Language Processing (NLP), Deep Learning / Neural Networks, Large Language Models (LLMs) / Generative AI, Transfer Learning / Pre-trained Models
 
 **Recommended Libraries:**
-- [e.g., pandas, scikit-learn, TensorFlow, Hugging Face]
+- `langchain` / `langchain-community` (Pipeline orchestration and prompt chaining)
+- `google-generativeai` / `langchain-google-genai` (Gemini API integration)
+- `chromadb` (Local vector storage and semantic retrieval)
+- `pypdf` / `pdfplumber` (PDF ingestion and text parsing)
+- `sentence-transformers` / `tiktoken` (Local embedding models and token counting)
+- `tenacity` (Exponential backoff and API retry handling)
+- `flashrank` (Local cross-encoder reranking — Stretch Goal)
+- `gradio` (Interactive browser prototyping — Stretch Goal)
 
 **Evaluation Metrics:**
-- [e.g., Accuracy, Precision/Recall, RMSE, BLEU score]
+- **Retrieval Accuracy (Top-$k$ Hit Rate):** Percentage of queries where the retrieved context contains the exact ground-truth source page/section.
+- **Citation Precision:** Verification that every cited technical claim in the generated memo directly maps back to a valid retrieved chunk.
+- **First-Pass Approval Rate:** Proportion of generated technical memos that satisfy formatting and technical criteria with zero or minimal human corrections.
+- **Deterministic Text Metrics (Stretch):** Exact keyword containment, ROUGE-L, and BLEU scores against gold-standard summary memos.
 
 ---
 
@@ -111,19 +133,21 @@ Use these milestones to guide your work. Your team will create a **GitHub Projec
 The following resources will help your team understand the problem space and potential technical approaches for this project:
 
 **Background Reading:**
-- [e.g., Link to an article or blog post about the problem domain]
-- [e.g., Link to an industry report or case study]
+- [Retrieval-Augmented Generation for Large Language Models: A Survey](https://arxiv.org/abs/2312.10997) (Comprehensive survey on naive, advanced, and modular RAG)
+- [Semantic Chunking Strategies for RAG](https://www.pinecone.io/learn/chunking-strategies/) (Understanding token boundaries, recursive character splitting, and semantic partitioning)
 
 **Technical Tutorials:**
-- [e.g., Link to a free tutorial on the ML technique(s) involved]
-- [e.g., Link to documentation for a key library or tool]
+- [LangChain RAG Quickstart Guide](https://python.langchain.com/docs/tutorials/rag/)
+- [ChromaDB Python API Documentation](https://docs.trychroma.com/)
+- [Google AI Studio & Gemini API Python Quickstart](https://ai.google.dev/gemini-api/docs/quickstart?lang=python)
+- [Handling Rate Limits and Retries with Tenacity](https://tenacity.readthedocs.io/)
 
 **Code Examples:**
-- [e.g., Link to a relevant GitHub repo]
-- [e.g., Link to a sample implementation or starter code]
+- [LangChain Cookbook: Question Answering over Documents](https://github.com/langchain-ai/langchain/tree/master/cookbook)
+- [Kaggle ArXiv Starter EDA Notebooks](https://www.kaggle.com/datasets/Cornell-University/arxiv/code)
 
 **Other:**
-- [Links to any additional resources — e.g., papers, videos, podcasts, etc.]
+- [ArXiv API Python Documentation](https://info.arxiv.org/help/api/index.html)
 
 *Feel free to explore beyond these, and share anything interesting you find with me!*
 
@@ -131,26 +155,24 @@ The following resources will help your team understand the problem space and pot
 
 ## 🤝 How We'll Work Together
 
-**Official check-ins:** During our biweekly 45-minute AI Studio Lab Section meeting block (2nd and 4th week of every month)
+**Official check-ins:** During our biweekly 45-minute AI Studio Lab Section meeting block (2nd and 4th week of every month).
 
- **Other ways to reach out to me with questions:** 
-* [e.g., Your team's channel within Break Through Tech’s Discord space]
-* [e.g., Email; please copy your teammates and AI Studio Coach]
-* [e.g., Request a team check-in on Zoom]
-* [Note: I will aim to respond within 48 hours. Please reach out to your AI Studio Coach with urgent questions.]
-
-> 💡 **Challenge Advisor: Please update the above based on your availability and preference. If you are not able to answer questions or meet with fellows outside of the biweekly Lab Section check-ins, simply write in "N/A (only available during the official check-in times)"**
+**Other ways to reach out to me with questions:** 
+* Your team's dedicated channel within Break Through Tech’s Discord workspace
+* Email: `josentambrosio@outlook.com` (Please always copy your teammates and AI Studio Coach on project correspondence)
+* Note: I will aim to respond within 24 to 48 hours. Please reach out to your AI Studio Coach with urgent questions.
 
 **Recommended free coding / collaboration tools**
-* […]
-* […]
+* **Google Colab:** Free-tier cloud runtime for running notebooks, text preprocessing, and ChromaDB vector search.
+* **GitHub & GitHub Projects:** Code version control, issue tracking, and Kanban board milestone management.
+* **Google Drive / Kaggle API:** Cloud storage and dataset transfer into Colab.
 
 ---
 
 ## 🚀 Getting Started
 
 1. **Review this overview document** and note any questions for our first meeting
-2. **Begin reviewing the dataset** using the link above
+2. **Begin reviewing the dataset** using `data/curated_papers_text.json` or the paper links above
 3. **Read the GitHub Projects documentation** [here](https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects)
 
 I’m excited to work with you!
