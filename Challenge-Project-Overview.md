@@ -1,39 +1,3 @@
----
-
-> ## Challenge Advisor: Update & Finalize Your Project Overview
->
-> > 💡 **These grey text instructions are just for you, the team's Challenge Advisor; please delete them once you have completed the steps below.**
->
-> We've pre-populated this Challenge Project Overview page — which is what will be shared with your Break Through Tech student team in August — using the details from your submission form. You should have received an email inviting you to join this repo as a Collaborator, enabling you to add files and make edits.
-> 
-> In order for your project to be finalized and assigned to a team, please:
-> 1. **Review all sections below** and update or expand any content as needed, making sure to address the SME Feedback in the section immediately below. Look for square brackets to find the places below that require additional inputs from you (e.g., "About [Company / Org Name]").
-> 2. **Add your dataset** to the [data folder](data) in this repo.
-> 3. **Close the Issue assigned to you in this repo** to let us know that you have made your edits and the overview page is ready for final review. You can do this by going to the _Issues_ tab in the top left section of the menu above, add a comment that says "CA review complete", and click the button to Close the Issue. 
->
-> If you're unfamiliar with how to edit a page like this in GitHub, check out [this tutorial](https://ubc-lib-geo.github.io/gis-workshop-waml-template/content/handson/edit-readme.html) for a quick overview (start with step 2 and only edit this page), and [this guide](https://ubc-lib-geo.github.io/gis-workshop-waml-template/content/markdown.html) on how to use Markdown to compose text.
->
->
-> ❌ Remember that this is a public repo. Do NOT include: Proprietary data, PII, API keys, credentials, or anything confidential.
-
-## 📋 BTT Internal Evaluation Notes
-*(This section is for BTT staff only — remove before sharing with students)*
-
-| Check | Status | Notes |
-|-------|--------|-------|
-| Python Compatibility | 🟢 | The tech stack is primarily centered on Python libraries, ensuring optimal compatibility with the ML engineering framework expected in the curriculum. |
-| Data Readiness | 🟡 | Data consists of a subset of ArXiv papers and may require preprocessing, especially for PDFs, which could complicate the initial stages of the project. |
-| Resource Check | 🟢 | Google Colab should suffice for the provided needs; no specialized hardware is necessary, and API keys can be managed by the organization. |
-
-**Student Fit Score:** 7/10  
-**Technical Depth Score:** 8/10  
-**Overall Recommendation:** REVISE
-
-**Advisor Feedback Draft:**
-The project leverages foundational ML concepts creatively, but the team must ensure clarity in implementing semantic chunking and maintain alignment with the semester timeline. Consider simplifying agentic routing approaches to fit within student capabilities. The team should also establish robust fallback mechanisms for external API dependencies.
-
----
-
 # Agentic Internal Knowledge System for R&D
 
 **Company / Org:** Zayi  
