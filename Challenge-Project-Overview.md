@@ -8,7 +8,7 @@
 
 ## 🏢 About Zayi
 
-Zayi is focused on leveraging cutting-edge technology to streamline research and development processes. We operate within the tech industry, specializing in knowledge management and automation solutions.
+Zayi is a research-led innovation hub dedicated to developing frontier AI and software systems that solve complex real-world challenges. We specialize in knowledge management and automation solutions that bridge rigorous scientific research with scalable digital engineering, empowering engineers and organizations to turn dense technical data into actionable intelligence.
 
 ---
 
