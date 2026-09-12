@@ -1,0 +1,11 @@
+id,title,category,total_pages,word_count,char_count
+2005.11401,Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks,RAG,19,9885,69076
+2312.10997,Retrieval-Augmented Generation for Large Language Models: A Survey,RAG Survey,21,15860,109959
+2310.11511,"Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection",Self-Correction,30,16143,105729
+2401.15884,Corrective Retrieval Augmented Generation (CRAG),Corrective RAG,16,9060,61308
+2210.03629,ReAct: Synergizing Reasoning and Acting in Language Models,Agent Reasoning,33,16970,110106
+2307.03172,Lost in the Middle: How Language Models Use Long Contexts,Context Windows,18,9773,65423
+2309.15217,RAGAS: Automated Evaluation of Retrieval Augmented Generation,Evaluation,8,4919,31944
+2106.09685,LoRA: Low-Rank Adaptation of Large Language Models,Model Architecture,26,13347,82496
+2205.14135,FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness,Systems,34,16804,108143
+2004.04906,Dense Passage Retrieval for Open-Domain Question Answering,Embeddings,13,8816,55933
