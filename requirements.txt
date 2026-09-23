@@ -2,3 +2,5 @@ pandas
 matplotlib
 ftfy
 ipykernel
+langchain-core
+langchain-text-splitters
