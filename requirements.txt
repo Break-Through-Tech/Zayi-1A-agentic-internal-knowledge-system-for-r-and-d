@@ -4,3 +4,5 @@ ftfy
 ipykernel
 langchain-core
 langchain-text-splitters
+sentence-transformers
+chromadb

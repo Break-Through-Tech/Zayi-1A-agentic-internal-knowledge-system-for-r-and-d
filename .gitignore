@@ -3,3 +3,6 @@
 .DS_Store
 __pycache__/
 *.pyc
+
+# Chroma vector store (regenerate with: python src/vector_store.py build)
+data/chroma_db/
