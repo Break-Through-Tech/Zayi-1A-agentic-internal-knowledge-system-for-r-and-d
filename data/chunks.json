@@ -3068,7 +3068,7 @@
     }
   },
   {
-    "page_content": "our experiments' settings, including test-time instructions, are available in the Appendix Section B.1.\nClosed-set tasks include two datasets, i.e., a factverification dataset about public health (PubHealth;\nZhang et al. 2023) and a multiple-choice reasoning dataset created from scientific exams ( ARC\nChallenge; Clark et al. 2018). We use accuracy as an evaluation metric and report on the test set. We\naggregate the answer probabilities of target classes for both of these datasets (Appendix Section B.2).\nShort-form generations tasks include two open-domain question answering (QA) datasets,\nPopQA (Mallen et al., 2023) and TriviaQA-unfiltered (Joshi et al., 2017), where systems need\nto answer arbitrary questions about factual knowledge. For PopQA, we use the long-tail subset,\nconsisting of 1,399 rare entity queries whose monthly Wikipedia page views are less than 100. As the\nTriviaQA-unfiltered (open) test set is not publicly available, we follow prior work's validation and",
+    "page_content": "our experiments' settings, including test-time instructions, are available in the Appendix Section B.1.\nClosed-set tasks include two datasets, i.e., a factverification dataset about public health (PubHealth;\nZhang et al. 2023) and a multiple-choice reasoning dataset created from scientific exams ( ARC-\nChallenge; Clark et al. 2018). We use accuracy as an evaluation metric and report on the test set. We\naggregate the answer probabilities of target classes for both of these datasets (Appendix Section B.2).\nShort-form generations tasks include two open-domain question answering (QA) datasets,\nPopQA (Mallen et al., 2023) and TriviaQA-unfiltered (Joshi et al., 2017), where systems need\nto answer arbitrary questions about factual knowledge. For PopQA, we use the long-tail subset,\nconsisting of 1,399 rare entity queries whose monthly Wikipedia page views are less than 100. As the\nTriviaQA-unfiltered (open) test set is not publicly available, we follow prior work's validation and",
     "metadata": {
       "paper_id": "2310.11511",
       "title": "Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection",
@@ -3088,7 +3088,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 27048,
+      "start_index": 27049,
       "page_number": 7,
       "end_page": 7
     }
@@ -3101,7 +3101,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 27919,
+      "start_index": 27920,
       "page_number": 7,
       "end_page": 7
     }
@@ -3114,7 +3114,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 28764,
+      "start_index": 28765,
       "page_number": 7,
       "end_page": 7
     }
@@ -3127,7 +3127,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 29625,
+      "start_index": 29626,
       "page_number": 7,
       "end_page": 7
     }
@@ -3140,7 +3140,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 30497,
+      "start_index": 30498,
       "page_number": 7,
       "end_page": 8
     }
@@ -3153,7 +3153,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 31333,
+      "start_index": 31334,
       "page_number": 8,
       "end_page": 8
     }
@@ -3166,7 +3166,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 32211,
+      "start_index": 32212,
       "page_number": 8,
       "end_page": 8
     }
@@ -3179,7 +3179,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 33097,
+      "start_index": 33098,
       "page_number": 8,
       "end_page": 8
     }
@@ -3192,7 +3192,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 33907,
+      "start_index": 33908,
       "page_number": 8,
       "end_page": 9
     }
@@ -3205,7 +3205,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 34790,
+      "start_index": 34791,
       "page_number": 8,
       "end_page": 9
     }
@@ -3218,7 +3218,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 35676,
+      "start_index": 35677,
       "page_number": 9,
       "end_page": 9
     }
@@ -3231,7 +3231,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 36567,
+      "start_index": 36568,
       "page_number": 9,
       "end_page": 9
     }
@@ -3244,7 +3244,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 37453,
+      "start_index": 37454,
       "page_number": 9,
       "end_page": 9
     }
@@ -3257,7 +3257,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 38343,
+      "start_index": 38344,
       "page_number": 9,
       "end_page": 10
     }
@@ -3270,7 +3270,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 39207,
+      "start_index": 39208,
       "page_number": 10,
       "end_page": 10
     }
@@ -3283,7 +3283,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 40013,
+      "start_index": 40014,
       "page_number": 10,
       "end_page": 10
     }
@@ -3296,7 +3296,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 40886,
+      "start_index": 40887,
       "page_number": 10,
       "end_page": 10
     }
@@ -3309,7 +3309,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 41759,
+      "start_index": 41760,
       "page_number": 10,
       "end_page": 10
     }
@@ -3322,7 +3322,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 42634,
+      "start_index": 42635,
       "page_number": 10,
       "end_page": 11
     }
@@ -3335,7 +3335,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 43385,
+      "start_index": 43386,
       "page_number": 10,
       "end_page": 11
     }
@@ -3348,7 +3348,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 44207,
+      "start_index": 44208,
       "page_number": 11,
       "end_page": 11
     }
@@ -3361,7 +3361,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 45149,
+      "start_index": 45150,
       "page_number": 11,
       "end_page": 11
     }
@@ -3374,7 +3374,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 46000,
+      "start_index": 46001,
       "page_number": 11,
       "end_page": 11
     }
@@ -3387,7 +3387,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 46871,
+      "start_index": 46872,
       "page_number": 11,
       "end_page": 12
     }
@@ -3400,7 +3400,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 47756,
+      "start_index": 47757,
       "page_number": 12,
       "end_page": 12
     }
@@ -3413,7 +3413,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 48581,
+      "start_index": 48582,
       "page_number": 12,
       "end_page": 12
     }
@@ -3426,7 +3426,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 49405,
+      "start_index": 49406,
       "page_number": 12,
       "end_page": 12
     }
@@ -3439,7 +3439,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 50219,
+      "start_index": 50220,
       "page_number": 12,
       "end_page": 13
     }
@@ -3452,7 +3452,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 51079,
+      "start_index": 51080,
       "page_number": 13,
       "end_page": 13
     }
@@ -3465,7 +3465,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 51919,
+      "start_index": 51920,
       "page_number": 13,
       "end_page": 13
     }
@@ -3478,7 +3478,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 52864,
+      "start_index": 52865,
       "page_number": 13,
       "end_page": 13
     }
@@ -3491,7 +3491,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 53740,
+      "start_index": 53741,
       "page_number": 13,
       "end_page": 13
     }
@@ -3504,7 +3504,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 54590,
+      "start_index": 54591,
       "page_number": 13,
       "end_page": 14
     }
@@ -3517,7 +3517,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 55424,
+      "start_index": 55425,
       "page_number": 14,
       "end_page": 14
     }
@@ -3530,7 +3530,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 56310,
+      "start_index": 56311,
       "page_number": 14,
       "end_page": 14
     }
@@ -3543,7 +3543,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 57135,
+      "start_index": 57136,
       "page_number": 14,
       "end_page": 14
     }
@@ -3556,7 +3556,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 58031,
+      "start_index": 58032,
       "page_number": 14,
       "end_page": 15
     }
@@ -3569,7 +3569,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 58873,
+      "start_index": 58874,
       "page_number": 15,
       "end_page": 15
     }
@@ -3582,7 +3582,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 59752,
+      "start_index": 59753,
       "page_number": 15,
       "end_page": 15
     }
@@ -3595,7 +3595,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 60641,
+      "start_index": 60642,
       "page_number": 15,
       "end_page": 16
     }
@@ -3608,7 +3608,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 61498,
+      "start_index": 61499,
       "page_number": 15,
       "end_page": 17
     }
@@ -3621,7 +3621,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 62395,
+      "start_index": 62396,
       "page_number": 16,
       "end_page": 17
     }
@@ -3634,7 +3634,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 63290,
+      "start_index": 63291,
       "page_number": 17,
       "end_page": 17
     }
@@ -3647,7 +3647,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 64121,
+      "start_index": 64122,
       "page_number": 17,
       "end_page": 17
     }
@@ -3660,7 +3660,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 64946,
+      "start_index": 64947,
       "page_number": 17,
       "end_page": 17
     }
@@ -3673,7 +3673,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 65867,
+      "start_index": 65868,
       "page_number": 17,
       "end_page": 18
     }
@@ -3686,7 +3686,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 66737,
+      "start_index": 66738,
       "page_number": 18,
       "end_page": 18
     }
@@ -3699,7 +3699,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 67604,
+      "start_index": 67605,
       "page_number": 18,
       "end_page": 18
     }
@@ -3712,7 +3712,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 68456,
+      "start_index": 68457,
       "page_number": 18,
       "end_page": 18
     }
@@ -3725,7 +3725,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 69312,
+      "start_index": 69313,
       "page_number": 18,
       "end_page": 19
     }
@@ -3738,7 +3738,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 70197,
+      "start_index": 70198,
       "page_number": 19,
       "end_page": 19
     }
@@ -3751,7 +3751,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 71002,
+      "start_index": 71003,
       "page_number": 19,
       "end_page": 19
     }
@@ -3764,7 +3764,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 71900,
+      "start_index": 71901,
       "page_number": 19,
       "end_page": 20
     }
@@ -3777,7 +3777,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 72794,
+      "start_index": 72795,
       "page_number": 20,
       "end_page": 20
     }
@@ -3790,7 +3790,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 73669,
+      "start_index": 73670,
       "page_number": 20,
       "end_page": 20
     }
@@ -3803,7 +3803,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 74477,
+      "start_index": 74478,
       "page_number": 20,
       "end_page": 20
     }
@@ -3816,7 +3816,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 75369,
+      "start_index": 75370,
       "page_number": 20,
       "end_page": 20
     }
@@ -3829,7 +3829,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 76228,
+      "start_index": 76229,
       "page_number": 20,
       "end_page": 21
     }
@@ -3842,7 +3842,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 77096,
+      "start_index": 77097,
       "page_number": 21,
       "end_page": 21
     }
@@ -3855,7 +3855,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 77931,
+      "start_index": 77932,
       "page_number": 21,
       "end_page": 22
     }
@@ -3868,7 +3868,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 78762,
+      "start_index": 78763,
       "page_number": 22,
       "end_page": 22
     }
@@ -3881,7 +3881,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 79601,
+      "start_index": 79602,
       "page_number": 22,
       "end_page": 22
     }
@@ -3894,7 +3894,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 80529,
+      "start_index": 80530,
       "page_number": 22,
       "end_page": 22
     }
@@ -3907,7 +3907,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 81312,
+      "start_index": 81313,
       "page_number": 22,
       "end_page": 22
     }
@@ -3920,7 +3920,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 82184,
+      "start_index": 82185,
       "page_number": 22,
       "end_page": 22
     }
@@ -3933,7 +3933,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 83153,
+      "start_index": 83154,
       "page_number": 22,
       "end_page": 22
     }
@@ -3946,7 +3946,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 84037,
+      "start_index": 84038,
       "page_number": 22,
       "end_page": 23
     }
@@ -3959,7 +3959,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 84880,
+      "start_index": 84881,
       "page_number": 23,
       "end_page": 23
     }
@@ -3972,7 +3972,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 85687,
+      "start_index": 85688,
       "page_number": 23,
       "end_page": 24
     }
@@ -3985,7 +3985,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 86577,
+      "start_index": 86578,
       "page_number": 24,
       "end_page": 24
     }
@@ -3998,7 +3998,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 87407,
+      "start_index": 87408,
       "page_number": 24,
       "end_page": 24
     }
@@ -4011,7 +4011,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 88268,
+      "start_index": 88269,
       "page_number": 24,
       "end_page": 24
     }
@@ -4024,7 +4024,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 89107,
+      "start_index": 89108,
       "page_number": 24,
       "end_page": 24
     }
@@ -4037,7 +4037,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 89993,
+      "start_index": 89994,
       "page_number": 24,
       "end_page": 25
     }
@@ -4050,7 +4050,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 90853,
+      "start_index": 90854,
       "page_number": 25,
       "end_page": 25
     }
@@ -4063,7 +4063,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 91787,
+      "start_index": 91788,
       "page_number": 25,
       "end_page": 25
     }
@@ -4076,7 +4076,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 92653,
+      "start_index": 92654,
       "page_number": 25,
       "end_page": 25
     }
@@ -4089,7 +4089,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 93525,
+      "start_index": 93526,
       "page_number": 25,
       "end_page": 26
     }
@@ -4102,7 +4102,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 94328,
+      "start_index": 94329,
       "page_number": 26,
       "end_page": 26
     }
@@ -4115,7 +4115,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 95236,
+      "start_index": 95237,
       "page_number": 26,
       "end_page": 27
     }
@@ -4128,7 +4128,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 96090,
+      "start_index": 96091,
       "page_number": 26,
       "end_page": 27
     }
@@ -4141,7 +4141,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 96997,
+      "start_index": 96998,
       "page_number": 27,
       "end_page": 27
     }
@@ -4154,7 +4154,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 97836,
+      "start_index": 97837,
       "page_number": 27,
       "end_page": 28
     }
@@ -4167,7 +4167,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 98711,
+      "start_index": 98712,
       "page_number": 28,
       "end_page": 28
     }
@@ -4180,7 +4180,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 99581,
+      "start_index": 99582,
       "page_number": 28,
       "end_page": 29
     }
@@ -4193,7 +4193,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 100400,
+      "start_index": 100401,
       "page_number": 29,
       "end_page": 29
     }
@@ -4206,7 +4206,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 101247,
+      "start_index": 101248,
       "page_number": 29,
       "end_page": 29
     }
@@ -4219,7 +4219,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 102083,
+      "start_index": 102084,
       "page_number": 29,
       "end_page": 30
     }
@@ -4232,7 +4232,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 102959,
+      "start_index": 102960,
       "page_number": 29,
       "end_page": 30
     }
@@ -4245,7 +4245,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 103791,
+      "start_index": 103792,
       "page_number": 30,
       "end_page": 30
     }
@@ -4258,7 +4258,7 @@
       "category": "Self-Correction",
       "pdf_url": "https://arxiv.org/pdf/2310.11511.pdf",
       "total_pages": 30,
-      "start_index": 104679,
+      "start_index": 104680,
       "page_number": 30,
       "end_page": 30
     }
@@ -5226,7 +5226,7 @@
     }
   },
   {
-    "page_content": "likely to appear in cabinets (1-6), countertops (1-3), ... ]\nAct 2: Go to cabinet 1 \nObs 2: On the cabinet 1, you see a vase 2. \n(Here the agent go to cabinet 1, then cabinet 2, 3, then countertop 1 and 2)\nAct 6: Go to countertop 3 Obs 6: On the countertop 3, you see a apple 1, a bread 1, \n...... a pepper shaker 1, and a vase 3.\nAct 7: Take pepper shaker 1 from countertop 3 \nObs 7: You pick up the pepper shaker 1 from the countertop 3. \nAct 8: Think[Now I find a pepper shaker 1. Next, I need to \nput it in/on drawer 1.]\nAct 9: Go to drawer 1 \nObs 9: Drawer 1 is closed. \nAct 10: Open drawer 1 \nObs 10: You open Drawer 1 a\nAct 11: Put pepper shaker 1 in/on drawer 1 \nObs 11: You put pepper shaker 1 in/on the drawer 1.\n(1a) Standard\nAnswer: iPod\n(1b) CoT (Reason Only)\nThought: Let\ns think step \nby step. Apple Remote was \noriginally designed to \ninteract with Apple TV. \nApple TV can be controlled \nby iPhone, iPad, and iPod \nTouch. So the answer is \niPhone, iPad, and iPod \n7RXFK",
+    "page_content": "likely to appear in cabinets (1-6), countertops (1-3), ... ]\nAct 2: Go to cabinet 1 \nObs 2: On the cabinet 1, you see a vase 2. \n(Here the agent go to cabinet 1, then cabinet 2, 3, then countertop 1 and 2)\nAct 6: Go to countertop 3 Obs 6: On the countertop 3, you see a apple 1, a bread 1, \n...... a pepper shaker 1, and a vase 3.\nAct 7: Take pepper shaker 1 from countertop 3 \nObs 7: You pick up the pepper shaker 1 from the countertop 3. \nAct 8: Think[Now I find a pepper shaker 1. Next, I need to \nput it in/on drawer 1.]\nAct 9: Go to drawer 1 \nObs 9: Drawer 1 is closed. \nAct 10: Open drawer 1 \nObs 10: You open Drawer 1 ...\nAct 11: Put pepper shaker 1 in/on drawer 1 \nObs 11: You put pepper shaker 1 in/on the drawer 1.\n(1a) Standard\nAnswer: iPod\n(1b) CoT (Reason Only)\nThought: Let\ns think step \nby step. Apple Remote was \noriginally designed to \ninteract with Apple TV. \nApple TV can be controlled \nby iPhone, iPad, and iPod \nTouch. So the answer is \niPhone, iPad, and iPod \nTouch.",
     "metadata": {
       "paper_id": "2210.03629",
       "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
@@ -5239,40 +5239,40 @@
     }
   },
   {
-    "page_content": "Apple TV can be controlled \nby iPhone, iPad, and iPod \nTouch. So the answer is \niPhone, iPad, and iPod \n7RXFK\nAnswer: iPhone, iPad, iPod \n7RXFK\n(1c) Act-Only \nAct 1: Search[Apple Remote] \nObs 1: The Apple Remote is a \nremote control a\nAct 2: Search[Front Row] \nObs 2: Could not find [Front \nRow]. Similar: a\nAct 3: Search[Front Row \n(software)] \nObs 3: Front Row is a \ndiscontinued media center \nsoftware a\nAct 4: Finish[yes]\n(1d) ReAct (Reason + Act)\nThought 1: I need to search Apple Remote and find the \nprogram it was originally designed to interact with.\nAct 1: Search[Apple Remote]\nObs 1: The Apple Remote is a remote control introduced in \nOctober 2005 by Apple a originally designed to control the \nFront Row media center program a\nThought 2: Apple Remote was originally designed to control \nthe Front Row media center program. I need to search Front \nRow next and find what other device can control it.\nAct 2: Search[Front Row]\nObs 2: Could not find [Front Row]. Similar: [\nFront Row",
+    "page_content": "Apple TV can be controlled \nby iPhone, iPad, and iPod \nTouch. So the answer is \niPhone, iPad, and iPod \nTouch.\nAnswer: iPhone, iPad, iPod \nTouch\n(1c) Act-Only \nAct 1: Search[Apple Remote] \nObs 1: The Apple Remote is a \nremote control ...\nAct 2: Search[Front Row] \nObs 2: Could not find [Front \nRow]. Similar: ...\nAct 3: Search[Front Row \n(software)] \nObs 3: Front Row is a \ndiscontinued media center \nsoftware ...\nAct 4: Finish[yes]\n(1d) ReAct (Reason + Act)\nThought 1: I need to search Apple Remote and find the \nprogram it was originally designed to interact with.\nAct 1: Search[Apple Remote]\nObs 1: The Apple Remote is a remote control introduced in \nOctober 2005 by Apple ... originally designed to control the \nFront Row media center program ...\nThought 2: Apple Remote was originally designed to control \nthe Front Row media center program. I need to search Front \nRow next and find what other device can control it.\nAct 2: Search[Front Row]\nObs 2: Could not find [Front Row]. Similar: [",
     "metadata": {
       "paper_id": "2210.03629",
       "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 4449,
+      "start_index": 4451,
       "page_number": 2,
       "end_page": 2
     }
   },
   {
-    "page_content": "Act 2: Search[Front Row]\nObs 2: Could not find [Front Row]. Similar: [\nFront Row \nSeat to Earth\nBnkjpNksIkpknolknpo\nFront Row \n(software)\na@\nThought 3: Front Row is not found. I need to search Front \nRow (software) .\nAct 3: Search[Front Row (software)]\nObs 3: Front Row is a discontinued media center software a\nThought 4: Front Row (software) is controlled by an Apple \nRemote or the keyboard function keys. So the answer is \nkeyboard function keys.\nAct 4: Finish[keyboard function keys]\n \nQuestion: Aside from the Apple Remote, what other device \ncan control the program Apple Remote was originally \ndesigned to interact with?\n(2a) Act-Only Act 1: Go to drawer 1 \nObs 1: The drawer 1 is closed. \nAct 2: Open drawer 1 \nObs 2: You open the drawer 1. The drawer 1 is open. In it, \nyou see a dishsponge 2, and a spoon 1.\nAct 3: Go to sinkbasin 1 \nObs 3: On the sinkbasin 1, you see a dishsponge 3, a \nspatula 1, and a spoon 2. \nAct 4: Take peppershaker 1 from sinkbasin 1 \nObs 4: Nothing happens.",
+    "page_content": "Row next and find what other device can control it.\nAct 2: Search[Front Row]\nObs 2: Could not find [Front Row]. Similar: [\nFront Row \nSeat to Earth\n, \nFront Row Motorsports\n,\nFront Row \n(software)\n, ...]\nThought 3: Front Row is not found. I need to search Front \nRow (software) .\nAct 3: Search[Front Row (software)]\nObs 3: Front Row is a discontinued media center software ...\nThought 4: Front Row (software) is controlled by an Apple \nRemote or the keyboard function keys. So the answer is \nkeyboard function keys.\nAct 4: Finish[keyboard function keys]\n \nQuestion: Aside from the Apple Remote, what other device \ncan control the program Apple Remote was originally \ndesigned to interact with?\n(2a) Act-Only Act 1: Go to drawer 1 \nObs 1: The drawer 1 is closed. \nAct 2: Open drawer 1 \nObs 2: You open the drawer 1. The drawer 1 is open. In it, \nyou see a dishsponge 2, and a spoon 1.\n \nAct 3: Go to sinkbasin 1 \nObs 3: On the sinkbasin 1, you see a dishsponge 3, a \nspatula 1, and a spoon 2.",
     "metadata": {
       "paper_id": "2210.03629",
       "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 5361,
+      "start_index": 5322,
       "page_number": 2,
       "end_page": 2
     }
   },
   {
-    "page_content": "spatula 1, and a spoon 2. \nAct 4: Take peppershaker 1 from sinkbasin 1 \nObs 4: Nothing happens. \nAct 5: Take peppershaker 1 from sinkbasin 1 \nObs 5: Nothing happens. \n(2b) ReAct (Reason + Act)\n \nYou are in the middle of a room. Looking quickly around \nyou, you see a cabinet 6, a cabinet 1, a coffee machine 1, \na countertop 3, a stove burner 1, and a toaster 1. \nYour task is to: Put some pepper shaker on a drawer.\n(2) AlfWorld\n(1) Hotspot QA\nFigure 1: (1) Comparison of 4 prompting methods, (a) Standard, (b) Chain-of-thought ( CoT,\nReason Only), (c) Act-only, and (d) ReAct (Reason+Act), solving a HotpotQA (Yang et al., 2018)\nquestion. (2) Comparison of (a) Act-only and (b) ReAct prompting to solve an AlfWorld (Shridhar\net al., 2020b) game. In both domains, we omit in-context examples in the prompt, and only show task\nsolving trajectories generated by the model (Act, Thought) and the environment (Obs).",
+    "page_content": "Act 3: Go to sinkbasin 1 \nObs 3: On the sinkbasin 1, you see a dishsponge 3, a \nspatula 1, and a spoon 2. \nAct 4: Take peppershaker 1 from sinkbasin 1 \nObs 4: Nothing happens. \nAct 5: Take peppershaker 1 from sinkbasin 1 \nObs 5: Nothing happens. \n(2b) ReAct (Reason + Act)\n \nYou are in the middle of a room. Looking quickly around \nyou, you see a cabinet 6, a cabinet 1, a coffee machine 1, \na countertop 3, a stove burner 1, and a toaster 1. \nYour task is to: Put some pepper shaker on a drawer.\n(2) AlfWorld\n(1) Hotspot QA\nFigure 1: (1) Comparison of 4 prompting methods, (a) Standard, (b) Chain-of-thought ( CoT,\nReason Only), (c) Act-only, and (d) ReAct (Reason+Act), solving a HotpotQA (Yang et al., 2018)\nquestion. (2) Comparison of (a) Act-only and (b) ReAct prompting to solve an AlfWorld (Shridhar\net al., 2020b) game. In both domains, we omit in-context examples in the prompt, and only show task\nsolving trajectories generated by the model (Act, Thought) and the environment (Obs).",
     "metadata": {
       "paper_id": "2210.03629",
       "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 6260,
+      "start_index": 6208,
       "page_number": 2,
       "end_page": 2
     }
@@ -5285,7 +5285,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 7087,
+      "start_index": 7115,
       "page_number": 2,
       "end_page": 2
     }
@@ -5298,7 +5298,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 7960,
+      "start_index": 7988,
       "page_number": 2,
       "end_page": 2
     }
@@ -5311,7 +5311,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 8837,
+      "start_index": 8865,
       "page_number": 2,
       "end_page": 3
     }
@@ -5324,7 +5324,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 9792,
+      "start_index": 9820,
       "page_number": 3,
       "end_page": 3
     }
@@ -5337,7 +5337,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 10659,
+      "start_index": 10687,
       "page_number": 3,
       "end_page": 3
     }
@@ -5350,7 +5350,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 11491,
+      "start_index": 11519,
       "page_number": 3,
       "end_page": 3
     }
@@ -5363,7 +5363,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 12386,
+      "start_index": 12414,
       "page_number": 3,
       "end_page": 3
     }
@@ -5376,7 +5376,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 13276,
+      "start_index": 13304,
       "page_number": 3,
       "end_page": 3
     }
@@ -5389,7 +5389,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 14151,
+      "start_index": 14179,
       "page_number": 3,
       "end_page": 4
     }
@@ -5402,7 +5402,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 15009,
+      "start_index": 15037,
       "page_number": 4,
       "end_page": 4
     }
@@ -5415,7 +5415,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 15883,
+      "start_index": 15911,
       "page_number": 4,
       "end_page": 4
     }
@@ -5428,7 +5428,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 16757,
+      "start_index": 16785,
       "page_number": 4,
       "end_page": 4
     }
@@ -5441,7 +5441,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 17475,
+      "start_index": 17503,
       "page_number": 4,
       "end_page": 4
     }
@@ -5454,7 +5454,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 18354,
+      "start_index": 18382,
       "page_number": 4,
       "end_page": 5
     }
@@ -5467,7 +5467,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 19163,
+      "start_index": 19191,
       "page_number": 5,
       "end_page": 5
     }
@@ -5480,7 +5480,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 20013,
+      "start_index": 20041,
       "page_number": 5,
       "end_page": 5
     }
@@ -5493,7 +5493,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 20919,
+      "start_index": 20947,
       "page_number": 5,
       "end_page": 5
     }
@@ -5506,7 +5506,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 21837,
+      "start_index": 21865,
       "page_number": 5,
       "end_page": 6
     }
@@ -5519,7 +5519,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 22698,
+      "start_index": 22726,
       "page_number": 6,
       "end_page": 6
     }
@@ -5532,7 +5532,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 23574,
+      "start_index": 23602,
       "page_number": 6,
       "end_page": 6
     }
@@ -5545,7 +5545,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 24533,
+      "start_index": 24561,
       "page_number": 6,
       "end_page": 6
     }
@@ -5558,7 +5558,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 25440,
+      "start_index": 25468,
       "page_number": 6,
       "end_page": 6
     }
@@ -5571,7 +5571,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 26269,
+      "start_index": 26297,
       "page_number": 6,
       "end_page": 7
     }
@@ -5584,7 +5584,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 27143,
+      "start_index": 27171,
       "page_number": 7,
       "end_page": 7
     }
@@ -5597,7 +5597,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 28024,
+      "start_index": 28052,
       "page_number": 7,
       "end_page": 7
     }
@@ -5610,7 +5610,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 28900,
+      "start_index": 28928,
       "page_number": 7,
       "end_page": 7
     }
@@ -5623,7 +5623,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 29745,
+      "start_index": 29773,
       "page_number": 7,
       "end_page": 7
     }
@@ -5636,7 +5636,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 30626,
+      "start_index": 30654,
       "page_number": 7,
       "end_page": 8
     }
@@ -5649,7 +5649,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 31484,
+      "start_index": 31512,
       "page_number": 8,
       "end_page": 8
     }
@@ -5662,7 +5662,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 32333,
+      "start_index": 32361,
       "page_number": 8,
       "end_page": 8
     }
@@ -5675,7 +5675,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 33180,
+      "start_index": 33208,
       "page_number": 8,
       "end_page": 8
     }
@@ -5688,7 +5688,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 33999,
+      "start_index": 34027,
       "page_number": 8,
       "end_page": 9
     }
@@ -5701,7 +5701,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 34864,
+      "start_index": 34892,
       "page_number": 8,
       "end_page": 9
     }
@@ -5714,7 +5714,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 35682,
+      "start_index": 35710,
       "page_number": 9,
       "end_page": 9
     }
@@ -5727,7 +5727,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 36570,
+      "start_index": 36598,
       "page_number": 9,
       "end_page": 9
     }
@@ -5740,7 +5740,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 37443,
+      "start_index": 37471,
       "page_number": 9,
       "end_page": 9
     }
@@ -5753,7 +5753,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 38314,
+      "start_index": 38342,
       "page_number": 9,
       "end_page": 9
     }
@@ -5766,7 +5766,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 39145,
+      "start_index": 39173,
       "page_number": 9,
       "end_page": 10
     }
@@ -5779,7 +5779,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 40031,
+      "start_index": 40059,
       "page_number": 10,
       "end_page": 10
     }
@@ -5792,7 +5792,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 40906,
+      "start_index": 40934,
       "page_number": 10,
       "end_page": 10
     }
@@ -5805,7 +5805,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 41773,
+      "start_index": 41801,
       "page_number": 10,
       "end_page": 10
     }
@@ -5818,7 +5818,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 42615,
+      "start_index": 42643,
       "page_number": 10,
       "end_page": 10
     }
@@ -5831,7 +5831,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 43510,
+      "start_index": 43538,
       "page_number": 10,
       "end_page": 11
     }
@@ -5844,7 +5844,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 44269,
+      "start_index": 44297,
       "page_number": 11,
       "end_page": 11
     }
@@ -5857,7 +5857,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 45164,
+      "start_index": 45192,
       "page_number": 11,
       "end_page": 11
     }
@@ -5870,7 +5870,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 46042,
+      "start_index": 46070,
       "page_number": 11,
       "end_page": 11
     }
@@ -5883,7 +5883,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 46984,
+      "start_index": 47012,
       "page_number": 11,
       "end_page": 12
     }
@@ -5896,7 +5896,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 47879,
+      "start_index": 47907,
       "page_number": 12,
       "end_page": 12
     }
@@ -5909,7 +5909,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 48745,
+      "start_index": 48773,
       "page_number": 12,
       "end_page": 12
     }
@@ -5922,7 +5922,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 49642,
+      "start_index": 49670,
       "page_number": 12,
       "end_page": 12
     }
@@ -5935,7 +5935,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 50537,
+      "start_index": 50565,
       "page_number": 12,
       "end_page": 13
     }
@@ -5948,7 +5948,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 51406,
+      "start_index": 51434,
       "page_number": 13,
       "end_page": 14
     }
@@ -5961,33 +5961,33 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 52235,
+      "start_index": 52263,
       "page_number": 14,
       "end_page": 14
     }
   },
   {
-    "page_content": "A.2 REAC T OBTAINS UP -TO-DATE KNOWLEDGE ON HOTPOT QA\n(1a) Standard\nAnswer: 3,000\n(1b) CoT (Reason Only)\nThought: Let\ns think step \nby step. The hotel that is \nhome to the Cirque du \nSoleil show Mystere is \nTreasure Island. Treasure \nIsland has 2,885 rooms, so \nthe answer is 2,885.\nAnswer: 2,885\n(1c) Act-Only \nAct 1: Search[Cirque du Soleil] \nObs 1: Cirque du Soleil is a \nCanadian entertainment companya\nAct 2: Lookup[Mystere] \nObs 2: No more results\nAct 3: Search[Mystere (Cirque du \nSoleil show)] \nObs 3: Could not finda\nAct 4: Search[Mystere (Cirque du \nSoleil)] \nObs 4: Mystre (my-steer) is \none of sixa\nAct 5: Lookup[Treasure Island \nHotel and Casino] \naa(end without answer)\n(1d) ReAct (Reason + Act)\nThought 1: I need to search Cirque du Soleil show Mystere, \nfind the hotel it is in, then find the number of rooms in \nthe hotel.\nAct 1: Search[Cirque du Soleil show Mystere]\nObs 1: Could not find Cirque du Soleil show Mystere. \nSimilar: [\nCirque du Soleil\na",
+    "page_content": "A.2 REAC T OBTAINS UP -TO-DATE KNOWLEDGE ON HOTPOT QA\n(1a) Standard\nAnswer: 3,000\n(1b) CoT (Reason Only)\nThought: Let\ns think step \nby step. The hotel that is \nhome to the Cirque du \nSoleil show Mystere is \nTreasure Island. Treasure \nIsland has 2,885 rooms, so \nthe answer is 2,885.\nAnswer: 2,885\n(1c) Act-Only \nAct 1: Search[Cirque du Soleil] \nObs 1: Cirque du Soleil is a \nCanadian entertainment company...\nAct 2: Lookup[Mystere] \nObs 2: No more results\nAct 3: Search[Mystere (Cirque du \nSoleil show)] \nObs 3: Could not find...\nAct 4: Search[Mystere (Cirque du \nSoleil)] \nObs 4: Mystre (my-steer) is \none of six...\nAct 5: Lookup[Treasure Island \nHotel and Casino] \n......(end without answer)\n(1d) ReAct (Reason + Act)\nThought 1: I need to search Cirque du Soleil show Mystere, \nfind the hotel it is in, then find the number of rooms in \nthe hotel.\nAct 1: Search[Cirque du Soleil show Mystere]\nObs 1: Could not find Cirque du Soleil show Mystere. \nSimilar: [\nCirque du Soleil\n ...",
     "metadata": {
       "paper_id": "2210.03629",
       "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 53130,
+      "start_index": 53158,
       "page_number": 14,
       "end_page": 14
     }
   },
   {
-    "page_content": "Obs 1: Could not find Cirque du Soleil show Mystere. \nSimilar: [\nCirque du Soleil\na\nThought 2: To find the hotel, I can search Mystere (Cirque \ndu Soleil).\nAct 2: Search[Mystere (Cirque du Soleil)]\nObs 2: Mystre (my-steer) is a Held in a custom theatre at \nthe Treasure Island Hotel and Casino a\nThought 3: Mystere is held in a custom theatre at the \nTreasure Island Hotel and Casino. So I need to search \nTreasure Island Hotel and Casino next and find the number \nof rooms in the hotel.\nAct 3: Search[Treasure Island Hotel and Casino]\nObs 3: Treasure Island Hotel and Casino a with 2,884 rooms \nand 220 suites a\nThought 4: Treasure Island Hotel and Casino has 2,884 rooms \nand 220 suites. So the answer is 3,104.\n$FW)LQLVK>@ \nQuestion: How many rooms are in the hotel that is home to \nthe Cirque du Soleil show Mystere?\nHotpotQA label: 2,664\n(1) Hotspot QA\nOutdated \nUp-to-date \nFigure 4: Another example HotpotQA question, where the original label is outdated. Only ReAct is",
+    "page_content": "Obs 1: Could not find Cirque du Soleil show Mystere. \nSimilar: [\nCirque du Soleil\n ...\nThought 2: To find the hotel, I can search Mystere (Cirque \ndu Soleil).\nAct 2: Search[Mystere (Cirque du Soleil)]\nObs 2: Mystre (my-steer) is ... Held in a custom theatre at \nthe Treasure Island Hotel and Casino ...\nThought 3: Mystere is held in a custom theatre at the \nTreasure Island Hotel and Casino. So I need to search \nTreasure Island Hotel and Casino next and find the number \nof rooms in the hotel.\nAct 3: Search[Treasure Island Hotel and Casino]\nObs 3: Treasure Island Hotel and Casino ... with 2,884 rooms \nand 220 suites ...\nThought 4: Treasure Island Hotel and Casino has 2,884 rooms \nand 220 suites. So the answer is 3,104.\n$FW)LQLVK>@ \nQuestion: How many rooms are in the hotel that is home to \nthe Cirque du Soleil show Mystere?\nHotpotQA label: 2,664\n(1) Hotspot QA\nOutdated \nUp-to-date \nFigure 4: Another example HotpotQA question, where the original label is outdated. Only ReAct is",
     "metadata": {
       "paper_id": "2210.03629",
       "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 54015,
+      "start_index": 54053,
       "page_number": 14,
       "end_page": 14
     }
@@ -6000,59 +6000,59 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 54873,
+      "start_index": 54922,
       "page_number": 14,
       "end_page": 14
     }
   },
   {
-    "page_content": "et al., 2021; Lazaridou et al., 2022; Shuster et al., 2022a) for up-to-date task solving.\nA.3 H UMAN -IN-THE -LOOP BEHAVIOR CORRECTION ON ALFWORLD\nWe also explore human-in-the-loop interaction with ReAct, to allow a human to inspect and edit\nReAct's reasoning traces. Figure 5 shows that by simply removing a hallucinating sentence in Act\n17 and adding some hints in Act 23, ReAct can be made to change its behavior drastically to align\nwith these human thought edits and succeed in the task. From a human perspective, solving such a\ntask becomes significantly easier, from typing tens of actions to only editing a couple of thoughts,\nwhich enables new forms of human-machine collaboration. We note that such a policy edit on-the-go\n(a) ReAct \nObs 16: You open the drawer 4. The drawer 4 is open. In it, you \nsee a keychain 3, and a watch 2. \nAct 17: Think [Now I find the first keychain (3). Next, I need to \ntake it. I can find the second keychain (2) later in drawer 4. ]",
+    "page_content": "et al., 2021; Lazaridou et al., 2022; Shuster et al., 2022a) for up-to-date task solving.\nA.3 H UMAN -IN-THE -LOOP BEHAVIOR CORRECTION ON ALFWORLD\nWe also explore human-in-the-loop interaction with ReAct, to allow a human to inspect and edit\nReAct's reasoning traces. Figure 5 shows that by simply removing a hallucinating sentence in Act\n17 and adding some hints in Act 23, ReAct can be made to change its behavior drastically to align\nwith these human thought edits and succeed in the task. From a human perspective, solving such a\ntask becomes significantly easier, from typing tens of actions to only editing a couple of thoughts,\nwhich enables new forms of human-machine collaboration. We note that such a policy edit on-the-go\n(a) ReAct \n......\nObs 16: You open the drawer 4. The drawer 4 is open. In it, you \nsee a keychain 3, and a watch 2. \nAct 17: Think [Now I find the first keychain (3). Next, I need to \ntake it. I can find the second keychain (2) later in drawer 4. ]",
     "metadata": {
       "paper_id": "2210.03629",
       "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 55783,
+      "start_index": 55832,
       "page_number": 14,
       "end_page": 15
     }
   },
   {
-    "page_content": "take it. I can find the second keychain (2) later in drawer 4. ]\nAct 18: take keychain 3 from drawer 4 \nObs 18: You pick up the keychain 3 from the drawer 4. \nAct 22: put keychain 3 in/on safe 1 \nObs 22: You put the keychain 3 in/on the safe 1. \nAct 23: Think [Now I put the first keychain in safe. Next, I need \nto find the second keychain. I can directly go to drawer 4. ]\nAct 24: go to drawer 4 \nObs 24: The drawer 4 is open. In it, you see a watch 2. \nAct 25: Think [Now I find the second keychain (2). Next, I need \nto take it.]\nAct 26: take keychain 2 from drawer 4 \nObs 26: Nothing happens.\n(b) ReAct (Human Thought edit)\nObs 16: You open the drawer 4. The drawer 4 is open. In it, you see a \nkeychain 3, and a watch 2. \nAct 17: Think [Now I find the first keychain (3). Next, I need to take it. I \ncan find the second keychain (2) later in drawer 4.]\nAct 18: take keychain 3 from drawer 4 \nObs 18: You pick up the keychain 3 from the drawer 4. \nAct 22: put keychain 3 in/on safe 1",
+    "page_content": "take it. I can find the second keychain (2) later in drawer 4. ]\nAct 18: take keychain 3 from drawer 4 \nObs 18: You pick up the keychain 3 from the drawer 4. \n......\nAct 22: put keychain 3 in/on safe 1 \nObs 22: You put the keychain 3 in/on the safe 1. \nAct 23: Think [Now I put the first keychain in safe. Next, I need \nto find the second keychain. I can directly go to drawer 4. ]\nAct 24: go to drawer 4 \nObs 24: The drawer 4 is open. In it, you see a watch 2. \nAct 25: Think [Now I find the second keychain (2). Next, I need \nto take it.]\nAct 26: take keychain 2 from drawer 4 \nObs 26: Nothing happens.\n(b) ReAct (Human Thought edit)\n......\nObs 16: You open the drawer 4. The drawer 4 is open. In it, you see a \nkeychain 3, and a watch 2. \nAct 17: Think [Now I find the first keychain (3). Next, I need to take it. I \ncan find the second keychain (2) later in drawer 4.]\nAct 18: take keychain 3 from drawer 4 \nObs 18: You pick up the keychain 3 from the drawer 4. \n......",
     "metadata": {
       "paper_id": "2210.03629",
       "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 56693,
+      "start_index": 56749,
       "page_number": 15,
       "end_page": 15
     }
   },
   {
-    "page_content": "Obs 18: You pick up the keychain 3 from the drawer 4. \nAct 22: put keychain 3 in/on safe 1 \nObs 22: You put the keychain 3 in/on the safe 1. \nAct 23: Think [Now I put the first keychain in safe. Next, I need to find \nthe second keychain, which is more likely to appear in dresser (1), \ngarbagecan (1), safe (1), sidetable (1), sofa (1), shelf (1-12).]\nAct 24: go to dresser 1 \nObs 24: On the dresser 1, you see a box 1, a creditcard 1, a keychain 2, a \nkeychain 1, a laptop 1...\nAct 25: Think [Now I find the second keychain (2). Next, I need to take \nLW@\nAct 26: take keychain 2 from dresser 1 \nObs 26: You pick up the keychain 2 from the dresser 1. \nAct 27: Think [Now I take the second keychain (2). Next, I need to put it \nin/on safe 1.]\nAct 28: go to safe 1\nObs 28: The safe 1 is open. In it, you see a keychain 3, a statue 2, and a \nZDWFK\nAct 29: put keychain 2 in/on safe 1\n2EV<RXSXWWKHNH\\FKDLQLQRQWKHVDIH \nYou are in the middle of a room. Looking quickly around you,",
+    "page_content": "Act 18: take keychain 3 from drawer 4 \nObs 18: You pick up the keychain 3 from the drawer 4. \n......\nAct 22: put keychain 3 in/on safe 1 \nObs 22: You put the keychain 3 in/on the safe 1. \nAct 23: Think [Now I put the first keychain in safe. Next, I need to find \nthe second keychain, which is more likely to appear in dresser (1), \ngarbagecan (1), safe (1), sidetable (1), sofa (1), shelf (1-12).]\nAct 24: go to dresser 1 \nObs 24: On the dresser 1, you see a box 1, a creditcard 1, a keychain 2, a \nkeychain 1, a laptop 1...\nAct 25: Think [Now I find the second keychain (2). Next, I need to take \nit.]\nAct 26: take keychain 2 from dresser 1 \nObs 26: You pick up the keychain 2 from the dresser 1. \nAct 27: Think [Now I take the second keychain (2). Next, I need to put it \nin/on safe 1.]\nAct 28: go to safe 1\nObs 28: The safe 1 is open. In it, you see a keychain 3, a statue 2, and a \nwatch 3.\nAct 29: put keychain 2 in/on safe 1\n2EV<RXSXWWKHNH\\FKDLQLQRQWKHVDIH",
     "metadata": {
       "paper_id": "2210.03629",
       "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 57591,
+      "start_index": 57622,
       "page_number": 15,
       "end_page": 15
     }
   },
   {
-    "page_content": "2EV<RXSXWWKHNH\\FKDLQLQRQWKHVDIH \nYou are in the middle of a room. Looking quickly around you, \nyou see a armchair 1, a cabinet 4, a a cabinet 1, a drawer 5, \na, a drawer 1, a dresser 1, a garbagecan 1, a safe 1, a shelf \n12, a, a shelf 1, a sidetable 1, and a sofa 1. \nYour task is to: put two keychain in safe.\n$OI:RUOG\nFigure 5: A human-in-the-loop behavior correction example with ReAct in AlfWorld. (a) ReAct\ntrajectory fails due to a hallucinating thought (Act 17). (b) By a human simply editing two thoughts\n(Act 17, 23), the ReAct trajectory produces desirable reasoning traces and actions and succeeds.\nis difficult for Act and previous RL methods, as a human cannot change the model parameters, and\nchanging a few actions might not edit the rest of the model behavior. This paradigm is also more than\nhuman dialogue to update the goal or subgoal as in Huang et al. (2022b) while editing ReAct",
+    "page_content": "watch 3.\nAct 29: put keychain 2 in/on safe 1\n2EV<RXSXWWKHNH\\FKDLQLQRQWKHVDIH \nYou are in the middle of a room. Looking quickly around you, \nyou see a armchair 1, a cabinet 4, ... a cabinet 1, a drawer 5, \n..., a drawer 1, a dresser 1, a garbagecan 1, a safe 1, a shelf \n12, ..., a shelf 1, a sidetable 1, and a sofa 1. \nYour task is to: put two keychain in safe.\nAlfWorld\nFigure 5: A human-in-the-loop behavior correction example with ReAct in AlfWorld. (a) ReAct\ntrajectory fails due to a hallucinating thought (Act 17). (b) By a human simply editing two thoughts\n(Act 17, 23), the ReAct trajectory produces desirable reasoning traces and actions and succeeds.\nis difficult for Act and previous RL methods, as a human cannot change the model parameters, and\nchanging a few actions might not edit the rest of the model behavior. This paradigm is also more than\nhuman dialogue to update the goal or subgoal as in Huang et al. (2022b) while editing ReAct",
     "metadata": {
       "paper_id": "2210.03629",
       "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 58472,
+      "start_index": 58508,
       "page_number": 15,
       "end_page": 15
     }
@@ -6065,7 +6065,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 59282,
+      "start_index": 59369,
       "page_number": 15,
       "end_page": 15
     }
@@ -6078,7 +6078,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 60163,
+      "start_index": 60250,
       "page_number": 15,
       "end_page": 16
     }
@@ -6091,7 +6091,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 61025,
+      "start_index": 61112,
       "page_number": 16,
       "end_page": 16
     }
@@ -6104,7 +6104,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 61897,
+      "start_index": 61984,
       "page_number": 16,
       "end_page": 16
     }
@@ -6117,7 +6117,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 62843,
+      "start_index": 62930,
       "page_number": 16,
       "end_page": 16
     }
@@ -6130,7 +6130,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 63711,
+      "start_index": 63798,
       "page_number": 16,
       "end_page": 17
     }
@@ -6143,7 +6143,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 64513,
+      "start_index": 64600,
       "page_number": 17,
       "end_page": 17
     }
@@ -6156,7 +6156,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 65415,
+      "start_index": 65502,
       "page_number": 17,
       "end_page": 17
     }
@@ -6169,7 +6169,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 66250,
+      "start_index": 66337,
       "page_number": 17,
       "end_page": 17
     }
@@ -6182,7 +6182,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 67069,
+      "start_index": 67156,
       "page_number": 17,
       "end_page": 18
     }
@@ -6195,7 +6195,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 67959,
+      "start_index": 68046,
       "page_number": 18,
       "end_page": 18
     }
@@ -6208,7 +6208,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 68850,
+      "start_index": 68937,
       "page_number": 18,
       "end_page": 18
     }
@@ -6221,7 +6221,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 69666,
+      "start_index": 69753,
       "page_number": 18,
       "end_page": 18
     }
@@ -6234,7 +6234,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 70498,
+      "start_index": 70585,
       "page_number": 18,
       "end_page": 18
     }
@@ -6247,7 +6247,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 71388,
+      "start_index": 71475,
       "page_number": 18,
       "end_page": 19
     }
@@ -6260,7 +6260,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 72287,
+      "start_index": 72374,
       "page_number": 19,
       "end_page": 20
     }
@@ -6273,7 +6273,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 73117,
+      "start_index": 73204,
       "page_number": 20,
       "end_page": 20
     }
@@ -6286,7 +6286,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 74035,
+      "start_index": 74122,
       "page_number": 20,
       "end_page": 20
     }
@@ -6299,7 +6299,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 74906,
+      "start_index": 74993,
       "page_number": 20,
       "end_page": 20
     }
@@ -6312,7 +6312,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 75780,
+      "start_index": 75867,
       "page_number": 20,
       "end_page": 21
     }
@@ -6325,7 +6325,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 76596,
+      "start_index": 76683,
       "page_number": 21,
       "end_page": 21
     }
@@ -6338,7 +6338,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 77454,
+      "start_index": 77541,
       "page_number": 21,
       "end_page": 21
     }
@@ -6351,7 +6351,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 78352,
+      "start_index": 78439,
       "page_number": 21,
       "end_page": 21
     }
@@ -6364,7 +6364,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 79211,
+      "start_index": 79298,
       "page_number": 21,
       "end_page": 22
     }
@@ -6377,7 +6377,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 80073,
+      "start_index": 80160,
       "page_number": 22,
       "end_page": 22
     }
@@ -6390,7 +6390,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 80933,
+      "start_index": 81020,
       "page_number": 22,
       "end_page": 22
     }
@@ -6403,7 +6403,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 81809,
+      "start_index": 81896,
       "page_number": 22,
       "end_page": 23
     }
@@ -6416,7 +6416,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 82667,
+      "start_index": 82754,
       "page_number": 22,
       "end_page": 23
     }
@@ -6429,7 +6429,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 83565,
+      "start_index": 83652,
       "page_number": 23,
       "end_page": 24
     }
@@ -6442,7 +6442,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 84421,
+      "start_index": 84508,
       "page_number": 23,
       "end_page": 24
     }
@@ -6455,7 +6455,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 85341,
+      "start_index": 85428,
       "page_number": 24,
       "end_page": 24
     }
@@ -6468,7 +6468,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 86214,
+      "start_index": 86301,
       "page_number": 24,
       "end_page": 25
     }
@@ -6481,7 +6481,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 87148,
+      "start_index": 87235,
       "page_number": 25,
       "end_page": 25
     }
@@ -6494,7 +6494,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 87997,
+      "start_index": 88084,
       "page_number": 25,
       "end_page": 26
     }
@@ -6507,7 +6507,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 88967,
+      "start_index": 89054,
       "page_number": 26,
       "end_page": 26
     }
@@ -6520,7 +6520,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 89877,
+      "start_index": 89964,
       "page_number": 26,
       "end_page": 26
     }
@@ -6533,7 +6533,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 90724,
+      "start_index": 90811,
       "page_number": 26,
       "end_page": 27
     }
@@ -6546,7 +6546,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 91587,
+      "start_index": 91674,
       "page_number": 26,
       "end_page": 27
     }
@@ -6559,7 +6559,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 92483,
+      "start_index": 92570,
       "page_number": 27,
       "end_page": 28
     }
@@ -6572,7 +6572,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 93390,
+      "start_index": 93477,
       "page_number": 28,
       "end_page": 28
     }
@@ -6585,7 +6585,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 94295,
+      "start_index": 94382,
       "page_number": 28,
       "end_page": 28
     }
@@ -6598,7 +6598,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 95117,
+      "start_index": 95204,
       "page_number": 28,
       "end_page": 29
     }
@@ -6611,7 +6611,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 96009,
+      "start_index": 96096,
       "page_number": 29,
       "end_page": 29
     }
@@ -6624,7 +6624,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 96871,
+      "start_index": 96958,
       "page_number": 29,
       "end_page": 29
     }
@@ -6637,7 +6637,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 97749,
+      "start_index": 97836,
       "page_number": 29,
       "end_page": 30
     }
@@ -6650,7 +6650,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 98633,
+      "start_index": 98720,
       "page_number": 30,
       "end_page": 30
     }
@@ -6663,7 +6663,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 99456,
+      "start_index": 99543,
       "page_number": 30,
       "end_page": 30
     }
@@ -6676,7 +6676,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 100333,
+      "start_index": 100420,
       "page_number": 30,
       "end_page": 31
     }
@@ -6689,7 +6689,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 101173,
+      "start_index": 101260,
       "page_number": 31,
       "end_page": 31
     }
@@ -6702,7 +6702,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 102032,
+      "start_index": 102119,
       "page_number": 31,
       "end_page": 31
     }
@@ -6715,7 +6715,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 102884,
+      "start_index": 102971,
       "page_number": 31,
       "end_page": 32
     }
@@ -6728,7 +6728,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 103754,
+      "start_index": 103841,
       "page_number": 32,
       "end_page": 32
     }
@@ -6741,7 +6741,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 104625,
+      "start_index": 104712,
       "page_number": 32,
       "end_page": 32
     }
@@ -6754,7 +6754,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 105558,
+      "start_index": 105645,
       "page_number": 32,
       "end_page": 32
     }
@@ -6767,7 +6767,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 106457,
+      "start_index": 106544,
       "page_number": 32,
       "end_page": 33
     }
@@ -6780,7 +6780,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 107367,
+      "start_index": 107454,
       "page_number": 33,
       "end_page": 33
     }
@@ -6793,7 +6793,7 @@
       "category": "Agent Reasoning",
       "pdf_url": "https://arxiv.org/pdf/2210.03629.pdf",
       "total_pages": 33,
-      "start_index": 108273,
+      "start_index": 108360,
       "page_number": 33,
       "end_page": 33
     }
@@ -8684,7 +8684,7 @@
     }
   },
   {
-    "page_content": "6 R ELATED WORKS\nTransformer Language Models. Transformer (Vaswani et al., 2017) is a sequence-to-sequence\narchitecture that makes heavy use of self-attention. Radford et al. (a) applied it to autoregressive language modeling by using a stack of Transformer decoders. Since then, Transformer-based language\nmodels have dominated NLP, achieving the state-of-the-art in many tasks. A new paradigm emerged\nwith BERT (Devlin et al., 2019b) and GPT-2 (Radford et al., b) both are large Transformer lan\nguage models trained on a large amount of text where fine-tuning on task-specific data after pretraining on general domain data provides a significant performance gain compared to training on\ntask-specific data directly. Training larger Transformers generally results in better performance and\nremains an active research direction. GPT-3 (Brown et al., 2020) is the largest single Transformer\nlanguage model trained to-date with 175B parameters.",
+    "page_content": "6 R ELATED WORKS\nTransformer Language Models. Transformer (Vaswani et al., 2017) is a sequence-to-sequence\narchitecture that makes heavy use of self-attention. Radford et al. (a) applied it to autoregressive language modeling by using a stack of Transformer decoders. Since then, Transformer-based language\nmodels have dominated NLP, achieving the state-of-the-art in many tasks. A new paradigm emerged\nwith BERT (Devlin et al., 2019b) and GPT-2 (Radford et al., b) both are large Transformer lan-\nguage models trained on a large amount of text where fine-tuning on task-specific data after pretraining on general domain data provides a significant performance gain compared to training on\ntask-specific data directly. Training larger Transformers generally results in better performance and\nremains an active research direction. GPT-3 (Brown et al., 2020) is the largest single Transformer\nlanguage model trained to-date with 175B parameters.",
     "metadata": {
       "paper_id": "2106.09685",
       "title": "LoRA: Low-Rank Adaptation of Large Language Models",
@@ -8704,7 +8704,7 @@
       "category": "Model Architecture",
       "pdf_url": "https://arxiv.org/pdf/2106.09685.pdf",
       "total_pages": 26,
-      "start_index": 29979,
+      "start_index": 29980,
       "page_number": 9,
       "end_page": 9
     }
@@ -8717,7 +8717,7 @@
       "category": "Model Architecture",
       "pdf_url": "https://arxiv.org/pdf/2106.09685.pdf",
       "total_pages": 26,
-      "start_index": 30911,
+      "start_index": 30912,
       "page_number": 9,
       "end_page": 9
     }
@@ -8730,7 +8730,7 @@
       "category": "Model Architecture",
       "pdf_url": "https://arxiv.org/pdf/2106.09685.pdf",
       "total_pages": 26,
-      "start_index": 31728,
+      "start_index": 31729,
       "page_number": 9,
       "end_page": 9
     }
@@ -8743,7 +8743,7 @@
       "category": "Model Architecture",
       "pdf_url": "https://arxiv.org/pdf/2106.09685.pdf",
       "total_pages": 26,
-      "start_index": 32591,
+      "start_index": 32592,
       "page_number": 9,
       "end_page": 9
     }
@@ -8756,7 +8756,7 @@
       "category": "Model Architecture",
       "pdf_url": "https://arxiv.org/pdf/2106.09685.pdf",
       "total_pages": 26,
-      "start_index": 33481,
+      "start_index": 33482,
       "page_number": 9,
       "end_page": 9
     }
@@ -8769,7 +8769,7 @@
       "category": "Model Architecture",
       "pdf_url": "https://arxiv.org/pdf/2106.09685.pdf",
       "total_pages": 26,
-      "start_index": 34324,
+      "start_index": 34325,
       "page_number": 9,
       "end_page": 10
     }
@@ -8782,7 +8782,7 @@
       "category": "Model Architecture",
       "pdf_url": "https://arxiv.org/pdf/2106.09685.pdf",
       "total_pages": 26,
-      "start_index": 35212,
+      "start_index": 35213,
       "page_number": 10,
       "end_page": 10
     }
@@ -8795,7 +8795,7 @@
       "category": "Model Architecture",
       "pdf_url": "https://arxiv.org/pdf/2106.09685.pdf",
       "total_pages": 26,
-      "start_index": 36046,
+      "start_index": 36047,
       "page_number": 10,
       "end_page": 10
     }
@@ -8808,7 +8808,7 @@
       "category": "Model Architecture",
       "pdf_url": "https://arxiv.org/pdf/2106.09685.pdf",
       "total_pages": 26,
-      "start_index": 36915,
+      "start_index": 36916,
       "page_number": 10,
       "end_page": 10
     }
@@ -8821,7 +8821,7 @@
       "category": "Model Architecture",
       "pdf_url": "https://arxiv.org/pdf/2106.09685.pdf",
       "total_pages": 26,
-      "start_index": 37772,
+      "start_index": 37773,
       "page_number": 10,
       "end_page": 11
     }
@@ -8834,7 +8834,7 @@
       "category": "Model Architecture",
       "pdf_url": "https://arxiv.org/pdf/2106.09685.pdf",
       "total_pages": 26,
-      "start_index": 38615,
+      "start_index": 38616,
       "page_number": 11,
       "end_page": 11
     }
@@ -8847,7 +8847,7 @@
       "category": "Model Architecture",
       "pdf_url": "https://arxiv.org/pdf/2106.09685.pdf",
       "total_pages": 26,
-      "start_index": 39506,
+      "start_index": 39507,
       "page_number": 11,
       "end_page": 11
     }
@@ -8860,7 +8860,7 @@
       "category": "Model Architecture",
       "pdf_url": "https://arxiv.org/pdf/2106.09685.pdf",
       "total_pages": 26,
-      "start_index": 40394,
+      "start_index": 40395,
       "page_number": 11,
       "end_page": 12
     }
@@ -8873,7 +8873,7 @@
       "category": "Model Architecture",
       "pdf_url": "https://arxiv.org/pdf/2106.09685.pdf",
       "total_pages": 26,
-      "start_index": 41225,
+      "start_index": 41226,
       "page_number": 12,
       "end_page": 12
     }
@@ -8886,7 +8886,7 @@
       "category": "Model Architecture",
       "pdf_url": "https://arxiv.org/pdf/2106.09685.pdf",
       "total_pages": 26,
-      "start_index": 42029,
+      "start_index": 42030,
       "page_number": 12,
       "end_page": 12
     }
@@ -8899,20 +8899,20 @@
       "category": "Model Architecture",
       "pdf_url": "https://arxiv.org/pdf/2106.09685.pdf",
       "total_pages": 26,
-      "start_index": 42919,
+      "start_index": 42920,
       "page_number": 12,
       "end_page": 12
     }
   },
   {
-    "page_content": "or LoRA is far from clear how are features learned during pre-training transformed to do well\non downstream tasks? We believe that LoRA makes it more tractable to answer this than full fine\ntuning. 3) We mostly depend on heuristics to select the weight matrices to apply LoRA to. Are\nthere more principled ways to do it? 4) Finally, the rank-deficiency of W suggests thatW could\nbe rank-deficient as well, which can also be a source of inspiration for future works.\nREFERENCES\nArmen Aghajanyan, Luke Zettlemoyer, and Sonal Gupta. Intrinsic Dimensionality Explains the\nEffectiveness of Language Model Fine-Tuning. arXiv:2012.13255 [cs], December 2020. URL\nhttp://arxiv.org/abs/2012.13255.\nZeyuan Allen-Zhu and Yuanzhi Li. What Can ResNet Learn Efficiently, Going Beyond Kernels? In\nNeurIPS, 2019. Full version available at http://arxiv.org/abs/1905.10337.\nZeyuan Allen-Zhu and Yuanzhi Li. Backward feature correction: How deep learning performs deep\nlearning. arXiv preprint arXiv:2001.04413, 2020a.",
+    "page_content": "or LoRA is far from clear how are features learned during pre-training transformed to do well\non downstream tasks? We believe that LoRA makes it more tractable to answer this than full fine-\ntuning. 3) We mostly depend on heuristics to select the weight matrices to apply LoRA to. Are\nthere more principled ways to do it? 4) Finally, the rank-deficiency of W suggests thatW could\nbe rank-deficient as well, which can also be a source of inspiration for future works.\nREFERENCES\nArmen Aghajanyan, Luke Zettlemoyer, and Sonal Gupta. Intrinsic Dimensionality Explains the\nEffectiveness of Language Model Fine-Tuning. arXiv:2012.13255 [cs], December 2020. URL\nhttp://arxiv.org/abs/2012.13255.\nZeyuan Allen-Zhu and Yuanzhi Li. What Can ResNet Learn Efficiently, Going Beyond Kernels? In\nNeurIPS, 2019. Full version available at http://arxiv.org/abs/1905.10337.\nZeyuan Allen-Zhu and Yuanzhi Li. Backward feature correction: How deep learning performs deep\nlearning. arXiv preprint arXiv:2001.04413, 2020a.",
     "metadata": {
       "paper_id": "2106.09685",
       "title": "LoRA: Low-Rank Adaptation of Large Language Models",
       "category": "Model Architecture",
       "pdf_url": "https://arxiv.org/pdf/2106.09685.pdf",
       "total_pages": 26,
-      "start_index": 43755,
+      "start_index": 43756,
       "page_number": 12,
       "end_page": 13
     }
@@ -8925,7 +8925,7 @@
       "category": "Model Architecture",
       "pdf_url": "https://arxiv.org/pdf/2106.09685.pdf",
       "total_pages": 26,
-      "start_index": 44704,
+      "start_index": 44706,
       "page_number": 13,
       "end_page": 13
     }
@@ -8938,7 +8938,7 @@
       "category": "Model Architecture",
       "pdf_url": "https://arxiv.org/pdf/2106.09685.pdf",
       "total_pages": 26,
-      "start_index": 45532,
+      "start_index": 45534,
       "page_number": 13,
       "end_page": 13
     }
@@ -8951,7 +8951,7 @@
       "category": "Model Architecture",
       "pdf_url": "https://arxiv.org/pdf/2106.09685.pdf",
       "total_pages": 26,
-      "start_index": 46367,
+      "start_index": 46369,
       "page_number": 13,
       "end_page": 13
     }
@@ -8964,7 +8964,7 @@
       "category": "Model Architecture",
       "pdf_url": "https://arxiv.org/pdf/2106.09685.pdf",
       "total_pages": 26,
-      "start_index": 47197,
+      "start_index": 47199,
       "page_number": 13,
       "end_page": 14
     }
@@ -8977,7 +8977,7 @@
       "category": "Model Architecture",
       "pdf_url": "https://arxiv.org/pdf/2106.09685.pdf",
       "total_pages": 26,
-      "start_index": 48125,
+      "start_index": 48127,
       "page_number": 14,
       "end_page": 14
     }
@@ -8990,7 +8990,7 @@
       "category": "Model Architecture",
       "pdf_url": "https://arxiv.org/pdf/2106.09685.pdf",
       "total_pages": 26,
-      "start_index": 49057,
+      "start_index": 49059,
       "page_number": 14,
       "end_page": 14
     }
@@ -9003,7 +9003,7 @@
       "category": "Model Architecture",
       "pdf_url": "https://arxiv.org/pdf/2106.09685.pdf",
       "total_pages": 26,
-      "start_index": 49930,
+      "start_index": 49932,
       "page_number": 14,
       "end_page": 14
     }
@@ -9016,7 +9016,7 @@
       "category": "Model Architecture",
       "pdf_url": "https://arxiv.org/pdf/2106.09685.pdf",
       "total_pages": 26,
-      "start_index": 50746,
+      "start_index": 50748,
       "page_number": 14,
       "end_page": 15
     }
@@ -9029,7 +9029,7 @@
       "category": "Model Architecture",
       "pdf_url": "https://arxiv.org/pdf/2106.09685.pdf",
       "total_pages": 26,
-      "start_index": 51621,
+      "start_index": 51623,
       "page_number": 15,
       "end_page": 15
     }
@@ -9042,7 +9042,7 @@
       "category": "Model Architecture",
       "pdf_url": "https://arxiv.org/pdf/2106.09685.pdf",
       "total_pages": 26,
-      "start_index": 52435,
+      "start_index": 52437,
       "page_number": 15,
       "end_page": 15
     }
@@ -9055,7 +9055,7 @@
       "category": "Model Architecture",
       "pdf_url": "https://arxiv.org/pdf/2106.09685.pdf",
       "total_pages": 26,
-      "start_index": 53295,
+      "start_index": 53297,
       "page_number": 15,
       "end_page": 15
     }
@@ -9068,7 +9068,7 @@
       "category": "Model Architecture",
       "pdf_url": "https://arxiv.org/pdf/2106.09685.pdf",
       "total_pages": 26,
-      "start_index": 54180,
+      "start_index": 54182,
       "page_number": 15,
       "end_page": 16
     }
@@ -9081,7 +9081,7 @@
       "category": "Model Architecture",
       "pdf_url": "https://arxiv.org/pdf/2106.09685.pdf",
       "total_pages": 26,
-      "start_index": 55049,
+      "start_index": 55051,
       "page_number": 16,
       "end_page": 16
     }
@@ -9094,7 +9094,7 @@
       "category": "Model Architecture",
       "pdf_url": "https://arxiv.org/pdf/2106.09685.pdf",
       "total_pages": 26,
-      "start_index": 55954,
+      "start_index": 55956,
       "page_number": 16,
       "end_page": 16
     }
@@ -9107,7 +9107,7 @@
       "category": "Model Architecture",
       "pdf_url": "https://arxiv.org/pdf/2106.09685.pdf",
       "total_pages": 26,
-      "start_index": 56827,
+      "start_index": 56829,
       "page_number": 16,
       "end_page": 16
     }
@@ -9120,7 +9120,7 @@
       "category": "Model Architecture",
       "pdf_url": "https://arxiv.org/pdf/2106.09685.pdf",
       "total_pages": 26,
-      "start_index": 57650,
+      "start_index": 57652,
       "page_number": 16,
       "end_page": 17
     }
@@ -9133,7 +9133,7 @@
       "category": "Model Architecture",
       "pdf_url": "https://arxiv.org/pdf/2106.09685.pdf",
       "total_pages": 26,
-      "start_index": 58547,
+      "start_index": 58549,
       "page_number": 17,
       "end_page": 17
     }
@@ -9146,7 +9146,7 @@
       "category": "Model Architecture",
       "pdf_url": "https://arxiv.org/pdf/2106.09685.pdf",
       "total_pages": 26,
-      "start_index": 59370,
+      "start_index": 59372,
       "page_number": 17,
       "end_page": 17
     }
@@ -9159,7 +9159,7 @@
       "category": "Model Architecture",
       "pdf_url": "https://arxiv.org/pdf/2106.09685.pdf",
       "total_pages": 26,
-      "start_index": 60248,
+      "start_index": 60250,
       "page_number": 17,
       "end_page": 18
     }
@@ -9172,7 +9172,7 @@
       "category": "Model Architecture",
       "pdf_url": "https://arxiv.org/pdf/2106.09685.pdf",
       "total_pages": 26,
-      "start_index": 61037,
+      "start_index": 61039,
       "page_number": 18,
       "end_page": 18
     }
@@ -9185,7 +9185,7 @@
       "category": "Model Architecture",
       "pdf_url": "https://arxiv.org/pdf/2106.09685.pdf",
       "total_pages": 26,
-      "start_index": 61958,
+      "start_index": 61960,
       "page_number": 18,
       "end_page": 18
     }
@@ -9198,7 +9198,7 @@
       "category": "Model Architecture",
       "pdf_url": "https://arxiv.org/pdf/2106.09685.pdf",
       "total_pages": 26,
-      "start_index": 62842,
+      "start_index": 62844,
       "page_number": 18,
       "end_page": 18
     }
@@ -9211,7 +9211,7 @@
       "category": "Model Architecture",
       "pdf_url": "https://arxiv.org/pdf/2106.09685.pdf",
       "total_pages": 26,
-      "start_index": 63741,
+      "start_index": 63743,
       "page_number": 18,
       "end_page": 19
     }
@@ -9224,7 +9224,7 @@
       "category": "Model Architecture",
       "pdf_url": "https://arxiv.org/pdf/2106.09685.pdf",
       "total_pages": 26,
-      "start_index": 64635,
+      "start_index": 64637,
       "page_number": 19,
       "end_page": 19
     }
@@ -9237,7 +9237,7 @@
       "category": "Model Architecture",
       "pdf_url": "https://arxiv.org/pdf/2106.09685.pdf",
       "total_pages": 26,
-      "start_index": 65524,
+      "start_index": 65526,
       "page_number": 19,
       "end_page": 19
     }
@@ -9250,7 +9250,7 @@
       "category": "Model Architecture",
       "pdf_url": "https://arxiv.org/pdf/2106.09685.pdf",
       "total_pages": 26,
-      "start_index": 66330,
+      "start_index": 66332,
       "page_number": 19,
       "end_page": 20
     }
@@ -9263,20 +9263,20 @@
       "category": "Model Architecture",
       "pdf_url": "https://arxiv.org/pdf/2106.09685.pdf",
       "total_pages": 26,
-      "start_index": 67233,
+      "start_index": 67235,
       "page_number": 20,
       "end_page": 20
     }
   },
   {
-    "page_content": "present two parameter budgets for LoRA: 4.7M (rq =rv = 1 orrv = 2) and 37.7M (rq =rv = 8\norrq =rk =rv =ro = 2). We report the best validation performance from each run. The training\nhyperparameters used in our GPT-3 experiments are listed in Table 12.\nE C OMBINING LORA WITH PREFIX TUNING\nLoRA can be naturally combined with existing prefix-based approaches. In this section, we evaluate\ntwo combinations of LoRA and variants of prefix-tuning on WikiSQL and MNLI.\nLoRA+PrefixEmbed (LoRA+PE) combines LoRA with prefix-embedding tuning, where we insert\nlp +li special tokens whose embeddings are treated as trainable parameters. For more on prefixembedding tuning, see Section 5.1.\nLoRA+PrefixLayer (LoRA+PL) combines LoRA with prefix-layer tuning. We also insert lp +li\nspecial tokens; however, instead of letting the hidden representations of these tokens evolve natu\nHyperparameters Fine-Tune PreEmbed PreLayer BitFit Adapter H LoRA\nOptimizer AdamW\nBatch Size 128\n# Epoch 2\nWarmup Tokens 250,000",
+    "page_content": "present two parameter budgets for LoRA: 4.7M (rq =rv = 1 orrv = 2) and 37.7M (rq =rv = 8\norrq =rk =rv =ro = 2). We report the best validation performance from each run. The training\nhyperparameters used in our GPT-3 experiments are listed in Table 12.\nE C OMBINING LORA WITH PREFIX TUNING\nLoRA can be naturally combined with existing prefix-based approaches. In this section, we evaluate\ntwo combinations of LoRA and variants of prefix-tuning on WikiSQL and MNLI.\nLoRA+PrefixEmbed (LoRA+PE) combines LoRA with prefix-embedding tuning, where we insert\nlp +li special tokens whose embeddings are treated as trainable parameters. For more on prefixembedding tuning, see Section 5.1.\nLoRA+PrefixLayer (LoRA+PL) combines LoRA with prefix-layer tuning. We also insert lp +li\nspecial tokens; however, instead of letting the hidden representations of these tokens evolve natu-\nHyperparameters Fine-Tune PreEmbed PreLayer BitFit Adapter H LoRA\nOptimizer AdamW\nBatch Size 128\n# Epoch 2\nWarmup Tokens 250,000",
     "metadata": {
       "paper_id": "2106.09685",
       "title": "LoRA: Low-Rank Adaptation of Large Language Models",
       "category": "Model Architecture",
       "pdf_url": "https://arxiv.org/pdf/2106.09685.pdf",
       "total_pages": 26,
-      "start_index": 68104,
+      "start_index": 68106,
       "page_number": 20,
       "end_page": 21
     }
@@ -9289,7 +9289,7 @@
       "category": "Model Architecture",
       "pdf_url": "https://arxiv.org/pdf/2106.09685.pdf",
       "total_pages": 26,
-      "start_index": 69038,
+      "start_index": 69041,
       "page_number": 21,
       "end_page": 21
     }
@@ -9302,7 +9302,7 @@
       "category": "Model Architecture",
       "pdf_url": "https://arxiv.org/pdf/2106.09685.pdf",
       "total_pages": 26,
-      "start_index": 69858,
+      "start_index": 69861,
       "page_number": 21,
       "end_page": 21
     }
@@ -9315,7 +9315,7 @@
       "category": "Model Architecture",
       "pdf_url": "https://arxiv.org/pdf/2106.09685.pdf",
       "total_pages": 26,
-      "start_index": 70735,
+      "start_index": 70738,
       "page_number": 21,
       "end_page": 22
     }
@@ -9328,7 +9328,7 @@
       "category": "Model Architecture",
       "pdf_url": "https://arxiv.org/pdf/2106.09685.pdf",
       "total_pages": 26,
-      "start_index": 71665,
+      "start_index": 71668,
       "page_number": 22,
       "end_page": 22
     }
@@ -9341,7 +9341,7 @@
       "category": "Model Architecture",
       "pdf_url": "https://arxiv.org/pdf/2106.09685.pdf",
       "total_pages": 26,
-      "start_index": 72463,
+      "start_index": 72466,
       "page_number": 22,
       "end_page": 22
     }
@@ -9354,7 +9354,7 @@
       "category": "Model Architecture",
       "pdf_url": "https://arxiv.org/pdf/2106.09685.pdf",
       "total_pages": 26,
-      "start_index": 73341,
+      "start_index": 73344,
       "page_number": 22,
       "end_page": 23
     }
@@ -9367,7 +9367,7 @@
       "category": "Model Architecture",
       "pdf_url": "https://arxiv.org/pdf/2106.09685.pdf",
       "total_pages": 26,
-      "start_index": 74230,
+      "start_index": 74233,
       "page_number": 23,
       "end_page": 23
     }
@@ -9380,7 +9380,7 @@
       "category": "Model Architecture",
       "pdf_url": "https://arxiv.org/pdf/2106.09685.pdf",
       "total_pages": 26,
-      "start_index": 75101,
+      "start_index": 75104,
       "page_number": 23,
       "end_page": 23
     }
@@ -9393,7 +9393,7 @@
       "category": "Model Architecture",
       "pdf_url": "https://arxiv.org/pdf/2106.09685.pdf",
       "total_pages": 26,
-      "start_index": 76004,
+      "start_index": 76007,
       "page_number": 23,
       "end_page": 24
     }
@@ -9406,7 +9406,7 @@
       "category": "Model Architecture",
       "pdf_url": "https://arxiv.org/pdf/2106.09685.pdf",
       "total_pages": 26,
-      "start_index": 76907,
+      "start_index": 76910,
       "page_number": 24,
       "end_page": 24
     }
@@ -9419,7 +9419,7 @@
       "category": "Model Architecture",
       "pdf_url": "https://arxiv.org/pdf/2106.09685.pdf",
       "total_pages": 26,
-      "start_index": 77790,
+      "start_index": 77793,
       "page_number": 24,
       "end_page": 25
     }
@@ -9432,7 +9432,7 @@
       "category": "Model Architecture",
       "pdf_url": "https://arxiv.org/pdf/2106.09685.pdf",
       "total_pages": 26,
-      "start_index": 78660,
+      "start_index": 78663,
       "page_number": 25,
       "end_page": 25
     }
@@ -9445,7 +9445,7 @@
       "category": "Model Architecture",
       "pdf_url": "https://arxiv.org/pdf/2106.09685.pdf",
       "total_pages": 26,
-      "start_index": 79510,
+      "start_index": 79513,
       "page_number": 25,
       "end_page": 26
     }
@@ -9458,7 +9458,7 @@
       "category": "Model Architecture",
       "pdf_url": "https://arxiv.org/pdf/2106.09685.pdf",
       "total_pages": 26,
-      "start_index": 80399,
+      "start_index": 80402,
       "page_number": 26,
       "end_page": 26
     }
@@ -9471,7 +9471,7 @@
       "category": "Model Architecture",
       "pdf_url": "https://arxiv.org/pdf/2106.09685.pdf",
       "total_pages": 26,
-      "start_index": 81285,
+      "start_index": 81288,
       "page_number": 26,
       "end_page": 26
     }
