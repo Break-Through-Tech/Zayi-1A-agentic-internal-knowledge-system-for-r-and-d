@@ -134,7 +134,7 @@ def score_config(name, qa_pairs, ranked, chunks, bib_flags, k):
 
 
 def chroma_ranked(qa_pairs, chunks, k):
-    """Config A through the real Chroma store (Tanish's query function)."""
+    """Config B through the real Chroma store (Tanish's query function)."""
     ids = vector_store.chunk_ids(chunks)
     pos = {cid: i for i, cid in enumerate(ids)}
     collection = vector_store.get_collection()
