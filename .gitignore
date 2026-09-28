@@ -6,3 +6,7 @@ __pycache__/
 
 # Chroma vector store (regenerate with: python src/vector_store.py build)
 data/chroma_db/
+
+# Retrieval eval outputs (regenerate with: python eval/evaluate_retrieval.py)
+eval/results/
+.pytest_cache/

@@ -12,22 +12,25 @@ Metrics (k = 5 by default):
   bibliography in top k  - share of questions whose top k contains a References-section chunk
 
 Three configurations are compared, all with Tanish's model and query prefix:
-  A  current      data/chunks.json as committed, queried through the Chroma
+  A  before       Niv's original chunks.json (read from git commit 9585dd6,
+                  before the ReAct cipher fix)
+  B  current      data/chunks.json on this branch, queried through the Chroma
                   store (src/vector_store.py) -- the real pipeline
-  B  cipher-fix   raw -> src/cleaning.py (ReAct fix) -> src/chunking.py (same settings)
-  C  no-bib       B, plus --drop-references (bibliography chunks removed)
-B and C are searched with exact cosine similarity (same embeddings Chroma uses);
-A is also re-scored that way as a sanity check that Chroma returns the same results.
+  C  no-bib       same as B but with bibliography chunks removed
+                  (src/chunking.py --drop-references)
+A and C are searched with exact cosine similarity (same embeddings Chroma uses);
+B is also re-scored that way as a sanity check that Chroma returns the same results.
 
 Usage (from the repo root, after `python src/vector_store.py build`):
     python eval/evaluate_retrieval.py
-    python eval/evaluate_retrieval.py -k 10 --only A
+    python eval/evaluate_retrieval.py -k 10 --only B
 
 Writes eval/results/retrieval_report.md and eval/results/per_question.csv.
 """
 import argparse
 import csv
 import json
+import subprocess
 import sys
 from pathlib import Path
 
@@ -37,10 +40,10 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
 
 import chunking  # noqa: E402
-import cleaning  # noqa: E402
 import vector_store  # noqa: E402
 
 QA_PATH = ROOT / "eval" / "qa_pairs.json"
+BEFORE_COMMIT = "9585dd6"  # Niv's "Documents chunked"
 RESULTS_DIR = ROOT / "eval" / "results"
 
 
@@ -135,11 +138,12 @@ def chroma_ranked(qa_pairs, chunks, k):
     ids = vector_store.chunk_ids(chunks)
     pos = {cid: i for i, cid in enumerate(ids)}
     collection = vector_store.get_collection()
-    if collection.count() != len(chunks):
-        raise SystemExit(
-            f"Chroma has {collection.count()} chunks but data/chunks.json has {len(chunks)}. "
-            "Rebuild with: python src/vector_store.py build"
-        )
+    stored = collection.get(include=["documents"])  # ~1k chunks: cheap to fetch all
+    stored_text = dict(zip(stored["ids"], stored["documents"]))
+    if len(stored_text) != len(chunks) or any(
+            stored_text.get(i) != c["page_content"] for i, c in zip(ids, chunks)):
+        raise SystemExit("The Chroma store doesn't match data/chunks.json (built from older chunks?). "
+                         "Rebuild with: python src/vector_store.py build")
     return [[pos[r["id"]] for r in vector_store.query(qa["question"], k=k, collection=collection)]
             for qa in qa_pairs]
 
@@ -189,28 +193,35 @@ def main():
     q_embs = emb.queries(questions)
     summaries, rows, notes = [], [], []
 
-    committed_clean = json.loads((ROOT / "data" / "cleaned_papers_text.json").read_text(encoding="utf-8"))
     if "A" in args.only:
-        chunks_a = vector_store.load_chunks()
-        bib_a = bibliography_flags(chunks_a, committed_clean)
-        ranked = chroma_ranked(qa_pairs, chunks_a, k)
-        exact = exact_search(q_embs, emb.passages([c["page_content"] for c in chunks_a]), k)
+        try:
+            old = subprocess.run(["git", "show", f"{BEFORE_COMMIT}:data/chunks.json"], cwd=ROOT,
+                                 capture_output=True, check=True).stdout
+            old_clean = subprocess.run(["git", "show", f"{BEFORE_COMMIT}:data/cleaned_papers_text.json"],
+                                       cwd=ROOT, capture_output=True, check=True).stdout
+            chunks_a, clean_a = json.loads(old), json.loads(old_clean)
+            ranked = exact_search(q_embs, emb.passages([c["page_content"] for c in chunks_a]), k)
+            s, r = score_config("A before", qa_pairs, ranked, chunks_a, bibliography_flags(chunks_a, clean_a), k)
+            summaries.append(s); rows += r
+        except (subprocess.CalledProcessError, FileNotFoundError):
+            notes.append(f"- Skipped A: commit {BEFORE_COMMIT} not found (run `git fetch`).")
+
+    current_clean = json.loads((ROOT / "data" / "cleaned_papers_text.json").read_text(encoding="utf-8"))
+    if "B" in args.only:
+        chunks_b = vector_store.load_chunks()
+        ranked = chroma_ranked(qa_pairs, chunks_b, k)
+        exact = exact_search(q_embs, emb.passages([c["page_content"] for c in chunks_b]), k)
         same_top1 = sum(r[0] == e[0] for r, e in zip(ranked, exact))
         notes.append(f"- Sanity check: Chroma and exact cosine search agree on the top-1 chunk "
                      f"for {same_top1}/{len(qa_pairs)} questions.")
-        s, r = score_config("A current", qa_pairs, ranked, chunks_a, bib_a, k)
+        s, r = score_config("B current", qa_pairs, ranked, chunks_b, bibliography_flags(chunks_b, current_clean), k)
         summaries.append(s); rows += r
 
-    if {"B", "C"} & set(args.only):
-        raw = json.loads((ROOT / "data" / "curated_papers_text.json").read_text(encoding="utf-8"))
-        fixed_clean = cleaning.clean_papers(raw)
-        for name, drop in [("B cipher-fix", False), ("C no-bib", True)]:
-            if name[0] not in args.only:
-                continue
-            chunks = chunking.chunk_papers(fixed_clean, drop_references=drop)
-            ranked = exact_search(q_embs, emb.passages([c["page_content"] for c in chunks]), k)
-            s, r = score_config(name, qa_pairs, ranked, chunks, bibliography_flags(chunks, fixed_clean), k)
-            summaries.append(s); rows += r
+    if "C" in args.only:
+        chunks_c = chunking.chunk_papers(current_clean, drop_references=True)
+        ranked = exact_search(q_embs, emb.passages([c["page_content"] for c in chunks_c]), k)
+        s, r = score_config("C no-bib", qa_pairs, ranked, chunks_c, bibliography_flags(chunks_c, current_clean), k)
+        summaries.append(s); rows += r
 
     write_report(summaries, rows, k, notes)
     for s in summaries:
