@@ -6,3 +6,5 @@ langchain-core
 langchain-text-splitters
 sentence-transformers
 chromadb
+langchain-google-genai
+python-dotenv
