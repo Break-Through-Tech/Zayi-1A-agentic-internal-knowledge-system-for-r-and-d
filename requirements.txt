@@ -2,6 +2,7 @@ pandas
 matplotlib
 ftfy
 ipykernel
+tenacity
 langchain-core
 langchain-text-splitters
 sentence-transformers
