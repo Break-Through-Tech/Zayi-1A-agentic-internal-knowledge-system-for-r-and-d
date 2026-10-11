@@ -50,7 +50,7 @@ Use these milestones to guide your work. Your team will create a **GitHub Projec
 **Name and Source:** Curated subset of ArXiv Machine Learning research papers
 **Format:** JSON (Pre-extracted Clean Text & Metadata) and PDF (Full-Text Documents)
 **Size:** ~18 MB total (10 core full-text papers)
-**Location:** Available directly in the repository's [`data/`](data/) folder (see `data/curated_papers_text.json`).
+**Location:** Available directly in the repository's [`data/`](data/) folder (`data/curated_papers_text.json` and `data/ground_truth_qa.json`).
 
 ### Key Details
 - **Curated Document Set:** The team will build and benchmark the knowledge system using these 10 foundational R&D research papers:
@@ -66,6 +66,7 @@ Use these milestones to guide your work. Your team will create a **GitHub Projec
   10. [Karpukhin et al., 2020 - Dense Passage Retrieval for Open-Domain Question Answering](https://arxiv.org/pdf/2004.04906)
 - **Dual-Track Data Readiness & Preprocessing:**
   - **Pre-Extracted Text (`data/curated_papers_text.json`):** Cleaned, sectioned text is provided so students can immediately focus on text cleaning, semantic chunking, and embedding without getting blocked by PDF parsing edge cases.
+  - **Ground-Truth Evaluation Set (`data/ground_truth_qa.json`):** A curated set of 40 gold-standard Q&A pairs (4 per paper) to be used for November's retrieval accuracy and answer benchmarking phase.
   - **Raw PDFs:** Available via direct links for students who want hands-on experience parsing complex 2-column technical documents and tracking exact page citations.
 - **Data Documentation:** Official ArXiv API and metadata documentation is available on the [Cornell ArXiv User Guide](https://info.arxiv.org/help/api/index.html).
 
