@@ -1,0 +1,581 @@
+[
+  {
+    "paper_id": "2005.11401",
+    "paper_title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tags",
+    "question": "What is the parameter count of the BART-large generator used as the parametric memory in the RAG models?",
+    "ground_truth_answer": "The BART-large generator, which serves as the parametric memory in RAG models, has 400 million parameters.",
+    "expected_section": "Section 2.3 Generator: BART",
+    "key_keywords": [
+      "BART-large",
+      "generator",
+      "parametric memory",
+      "parameters"
+    ]
+  },
+  {
+    "paper_id": "2005.11401",
+    "paper_title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tags",
+    "question": "How do the RAG models handle the training of the retriever and generator components, particularly regarding direct supervision and updates to the document index?",
+    "ground_truth_answer": "RAG models jointly train the retriever and generator without any direct supervision on what document should be retrieved. Training involves minimizing the negative marginal log-likelihood using stochastic gradient descent with Adam. During this process, the document encoder and index are kept fixed, with only the query encoder (BERTq) and the BART generator being fine-tuned.",
+    "expected_section": "Section 2.4 Training",
+    "key_keywords": [
+      "training",
+      "retriever",
+      "generator",
+      "log-likelihood",
+      "Adam",
+      "fine-tuning",
+      "document encoder"
+    ]
+  },
+  {
+    "paper_id": "2005.11401",
+    "paper_title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tags",
+    "question": "According to the paper, what are the primary performance benefits of RAG models on knowledge-intensive NLP tasks compared to parametric-only seq2seq models and retrieve-and-extract architectures?",
+    "ground_truth_answer": "RAG models achieve state-of-the-art results on several open-domain QA tasks (Natural Questions, WebQuestions, CuratedTrec), outperforming both parametric seq2seq models and task-specific retrieve-and-extract architectures. For language generation tasks, RAG models generate language that is more specific, diverse, and factual than a state-of-the-art parametric-only seq2seq baseline like BART.",
+    "expected_section": "Abstract, Section 1 Introduction",
+    "key_keywords": [
+      "state-of-the-art",
+      "knowledge-intensive",
+      "QA tasks",
+      "language generation",
+      "factual",
+      "diverse",
+      "specific"
+    ]
+  },
+  {
+    "paper_id": "2005.11401",
+    "paper_title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tags",
+    "question": "What is the key conceptual difference between the RAG-Sequence and RAG-Token models concerning how they use retrieved documents during generation?",
+    "ground_truth_answer": "The RAG-Sequence model uses a single retrieved document, treated as a latent variable, to generate the complete output sequence. In contrast, the RAG-Token model can draw a different latent document for each target token, allowing it to select content from multiple retrieved documents across the generated sequence.",
+    "expected_section": "Section 2.1 Models",
+    "key_keywords": [
+      "RAG-Sequence",
+      "RAG-Token",
+      "retrieved documents",
+      "latent variable",
+      "per-token",
+      "per-sequence",
+      "generation"
+    ]
+  },
+  {
+    "paper_id": "2312.10997",
+    "paper_title": "Retrieval-Augmented Generation for Large Language Models: A Survey",
+    "question": "What are the three stages into which the RAG research paradigm is categorized in this survey?",
+    "ground_truth_answer": "The RAG research paradigm is categorized into three stages: Naive RAG, Advanced RAG, and Modular RAG.",
+    "expected_section": "Abstract, Section II",
+    "key_keywords": [
+      "RAG paradigms",
+      "Naive RAG",
+      "Advanced RAG",
+      "Modular RAG"
+    ]
+  },
+  {
+    "paper_id": "2312.10997",
+    "paper_title": "Retrieval-Augmented Generation for Large Language Models: A Survey",
+    "question": "Detail the three fundamental steps involved in the Naive RAG process.",
+    "ground_truth_answer": "The Naive RAG process involves three steps: Indexing, Retrieval, and Generation. Indexing prepares raw data by cleaning, splitting it into chunks, encoding them into vectors, and storing them in a vector database. Retrieval then transforms a user query into a vector, computes similarity scores, and retrieves the top K most relevant chunks. Finally, Generation synthesizes the original query and selected documents into a prompt for a Large Language Model to formulate a response.",
+    "expected_section": "Section II.A",
+    "key_keywords": [
+      "Naive RAG",
+      "indexing",
+      "retrieval",
+      "generation",
+      "process steps"
+    ]
+  },
+  {
+    "paper_id": "2312.10997",
+    "paper_title": "Retrieval-Augmented Generation for Large Language Models: A Survey",
+    "question": "Summarize the primary challenges faced by Naive RAG across its retrieval, generation, and augmentation phases.",
+    "ground_truth_answer": "Naive RAG encounters significant challenges. In retrieval, it struggles with precision and recall, leading to misaligned or irrelevant chunks. During generation, issues like hallucination, irrelevance, toxicity, and bias compromise output quality. For augmentation, integrating information can result in disjointed outputs, redundancy, and difficulties in determining significance or ensuring stylistic consistency.",
+    "expected_section": "Section II.A",
+    "key_keywords": [
+      "Naive RAG limitations",
+      "retrieval challenges",
+      "generation difficulties",
+      "augmentation hurdles",
+      "hallucination",
+      "redundancy"
+    ]
+  },
+  {
+    "paper_id": "2312.10997",
+    "paper_title": "Retrieval-Augmented Generation for Large Language Models: A Survey",
+    "question": "What is the definition of 'hallucination' as it relates to Large Language Models in the context of this paper?",
+    "ground_truth_answer": "Hallucination, in the context of Large Language Models, refers to the phenomenon where the model produces content not supported by the provided retrieved context, or generates factually incorrect information, especially when queries go beyond its training data or require current knowledge.",
+    "expected_section": "Abstract, Introduction, Section II.A",
+    "key_keywords": [
+      "hallucination",
+      "Large Language Models",
+      "LLMs",
+      "RAG",
+      "unsupported content"
+    ]
+  },
+  {
+    "paper_id": "2310.11511",
+    "paper_title": "Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection",
+    "question": "What parameter sizes were primarily used for the Self-RAG models evaluated in the paper?",
+    "ground_truth_answer": "The Self-RAG models evaluated in the paper had 7B and 13B parameters.",
+    "expected_section": "Abstract",
+    "key_keywords": [
+      "Self-RAG",
+      "parameters",
+      "7B",
+      "13B"
+    ]
+  },
+  {
+    "paper_id": "2310.11511",
+    "paper_title": "Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection",
+    "question": "Describe the three main steps of the Self-Reflective Retrieval-Augmented Generation (Self-RAG) process as detailed in the introduction.",
+    "ground_truth_answer": "The Self-RAG process involves three main steps: first, determining if retrieval is helpful and outputting a retrieval token to call a retriever on demand; second, concurrently processing multiple retrieved passages, evaluating their relevance, and generating corresponding task outputs; and third, generating critique tokens to criticize its own output and choose the best one in terms of factuality and overall quality.",
+    "expected_section": "Introduction",
+    "key_keywords": [
+      "Self-RAG",
+      "retrieval token",
+      "critique token",
+      "inference process",
+      "self-reflection"
+    ]
+  },
+  {
+    "paper_id": "2310.11511",
+    "paper_title": "Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection",
+    "question": "According to the paper, how does Self-RAG's performance compare to state-of-the-art LLMs and retrieval-augmented models, and what key generation quality aspects does it specifically improve?",
+    "ground_truth_answer": "Self-RAG significantly outperforms state-of-the-art LLMs and retrieval-augmented models, including ChatGPT and retrieval-augmented Llama2-chat, on a diverse set of tasks such as Open-domain QA, reasoning, and fact verification. It shows significant gains in improving factuality and citation accuracy for long-form generations.",
+    "expected_section": "Abstract, Introduction",
+    "key_keywords": [
+      "Self-RAG",
+      "performance",
+      "factuality",
+      "citation accuracy",
+      "LLMs",
+      "RAG"
+    ]
+  },
+  {
+    "paper_id": "2310.11511",
+    "paper_title": "Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection",
+    "question": "What are \"reflection tokens\" in the Self-RAG framework, and what are their two main categories?",
+    "ground_truth_answer": "Reflection tokens are special tokens that the Self-RAG LM generates to reflect on retrieved passages and its own generations. They are categorized into retrieval tokens, which indicate the need for retrieval, and critique tokens, which indicate the generation quality.",
+    "expected_section": "Abstract, Introduction",
+    "key_keywords": [
+      "reflection tokens",
+      "retrieval tokens",
+      "critique tokens",
+      "Self-RAG",
+      "special tokens"
+    ]
+  },
+  {
+    "paper_id": "2401.15884",
+    "paper_title": "Corrective Retrieval Augmented Generation (CRAG)",
+    "question": "What is the mathematical formulation presented in the paper for the RAG framework?",
+    "ground_truth_answer": "The RAG framework is formulated as P(Y|X) = P(D|X)P(Y, D|X), where X is the input, Y is the output, and D represents the retrieved documents.",
+    "expected_section": "Section 3: Task Formulation",
+    "key_keywords": [
+      "RAG framework",
+      "mathematical formulation",
+      "P(Y|X)"
+    ]
+  },
+  {
+    "paper_id": "2401.15884",
+    "paper_title": "Corrective Retrieval Augmented Generation (CRAG)",
+    "question": "What specific knowledge retrieval actions can be triggered by the confidence degree from CRAG's retrieval evaluator, and what is done for some of these actions?",
+    "ground_truth_answer": "The confidence degree from CRAG's retrieval evaluator can trigger knowledge retrieval actions of {Correct, Incorrect, Ambiguous}. For the 'Incorrect' and 'Ambiguous' actions, large-scale web searches are integrated as a strategic extension to broaden the spectrum of retrieved information and complement the initially obtained documents.",
+    "expected_section": "Abstract, Section 1: Introduction",
+    "key_keywords": [
+      "retrieval evaluator",
+      "confidence degree",
+      "knowledge retrieval actions",
+      "web searches"
+    ]
+  },
+  {
+    "paper_id": "2401.15884",
+    "paper_title": "Corrective Retrieval Augmented Generation (CRAG)",
+    "question": "On what types of tasks and datasets was CRAG evaluated, and what were the general findings regarding its performance compared to other RAG approaches?",
+    "ground_truth_answer": "CRAG was evaluated on four datasets (PopQA, Biography, Pub Health, and Arc-Challenge) covering both short- and long-form generation tasks. The general findings were that CRAG significantly improves the performance of RAG-based approaches, including standard RAG and state-of-the-art Self-RAG, demonstrating its generalizability.",
+    "expected_section": "Abstract, Section 1: Introduction",
+    "key_keywords": [
+      "evaluation",
+      "performance",
+      "RAG-based approaches",
+      "datasets",
+      "generalizability"
+    ]
+  },
+  {
+    "paper_id": "2401.15884",
+    "paper_title": "Corrective Retrieval Augmented Generation (CRAG)",
+    "question": "What is the primary function of the \"decompose-then-recompose algorithm\" in CRAG?",
+    "ground_truth_answer": "The \"decompose-then-recompose algorithm\" is designed for retrieved documents to selectively focus on key information and filter out irrelevant information, thereby optimizing the extraction of key insights and minimizing the inclusion of non-essential elements to enhance the utilization of retrieved data.",
+    "expected_section": "Abstract, Section 1: Introduction",
+    "key_keywords": [
+      "decompose-then-recompose algorithm",
+      "information filtering",
+      "key insights",
+      "retrieved documents"
+    ]
+  },
+  {
+    "paper_id": "2210.03629",
+    "paper_title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+    "question": "How many in-context examples does ReAct typically require to achieve its reported performance advantages on interactive decision-making benchmarks like ALFWorld and WebShop?",
+    "ground_truth_answer": "ReAct typically requires only one or two in-context examples to outperform imitation and reinforcement learning methods on interactive decision-making benchmarks like ALFWorld and WebShop.",
+    "expected_section": "Abstract",
+    "key_keywords": [
+      "in-context examples",
+      "few-shot",
+      "ALFWorld",
+      "WebShop"
+    ]
+  },
+  {
+    "paper_id": "2210.03629",
+    "paper_title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+    "question": "What is the core methodology of the ReAct paradigm for task solving with language models?",
+    "ground_truth_answer": "ReAct prompts large language models (LLMs) to generate both verbal reasoning traces and task-specific actions in an interleaved manner. This allows for dynamic reasoning to create, maintain, and adjust plans, while also interacting with external environments to gather additional information.",
+    "expected_section": "Abstract, Section 2",
+    "key_keywords": [
+      "interleaved",
+      "reasoning traces",
+      "actions",
+      "LLMs",
+      "methodology"
+    ]
+  },
+  {
+    "paper_id": "2210.03629",
+    "paper_title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+    "question": "Summarize the primary benefits and performance gains of ReAct compared to baseline methods like Chain-of-Thought (CoT) and Act-only approaches, across the evaluated benchmarks.",
+    "ground_truth_answer": "ReAct demonstrates improved performance across question answering (HotpotQA) and fact verification (Fever) by overcoming hallucination and error propagation, and on interactive decision-making (ALFWorld, WebShop) with absolute success rate improvements of 34% and 10% respectively over imitation/reinforcement learning. It also offers enhanced human interpretability, trustworthiness, and diagnosability due to its explicit reasoning traces.",
+    "expected_section": "Abstract, Section 2",
+    "key_keywords": [
+      "performance gains",
+      "interpretability",
+      "hallucination",
+      "error propagation",
+      "HotpotQA",
+      "ALFWorld",
+      "WebShop"
+    ]
+  },
+  {
+    "paper_id": "2210.03629",
+    "paper_title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+    "question": "What core abilities does the ReAct paradigm aim to synergize within language models?",
+    "ground_truth_answer": "The ReAct paradigm aims to synergize reasoning and acting in language models by enabling them to generate both verbal reasoning traces and task-specific actions in an interleaved fashion.",
+    "expected_section": "Abstract, Introduction, Section 2",
+    "key_keywords": [
+      "ReAct",
+      "reasoning",
+      "acting",
+      "synergizing",
+      "language models"
+    ]
+  },
+  {
+    "paper_id": "2307.03172",
+    "paper_title": "Lost in the Middle: How Language Models Use Long Contexts",
+    "question": "How does the memory and compute requirement of Transformer-based language models scale with sequence length?",
+    "ground_truth_answer": "Transformer-based language models typically require memory and compute that increases quadratically in sequence length.",
+    "expected_section": "Introduction",
+    "key_keywords": [
+      "Transformer",
+      "sequence length",
+      "quadratic scaling",
+      "memory",
+      "compute"
+    ]
+  },
+  {
+    "paper_id": "2307.03172",
+    "paper_title": "Lost in the Middle: How Language Models Use Long Contexts",
+    "question": "In the multi-document question answering task, how did the authors control the input context length and the position of the relevant information?",
+    "ground_truth_answer": "The authors controlled the input context length by changing the number of documents in the input context (akin to retrieving more or fewer documents in RAG) and controlled the position of the relevant information by changing the order of the documents to place the relevant document at the beginning, middle, or end of the context.",
+    "expected_section": "Introduction",
+    "key_keywords": [
+      "multi-document question answering",
+      "input context length",
+      "position of relevant information",
+      "experimental setup",
+      "document order"
+    ]
+  },
+  {
+    "paper_id": "2307.03172",
+    "paper_title": "Lost in the Middle: How Language Models Use Long Contexts",
+    "question": "What is the primary finding regarding how language models use long contexts, and what trade-off does it highlight for prompting LMs with extensive information?",
+    "ground_truth_answer": "The primary finding is a distinctive U-shaped performance curve, where language models perform best when relevant information occurs at the very beginning (primacy bias) or end (recency bias) of the input context, and significantly degrade when models must access information in the middle. This highlights a trade-off: providing more information may help perform the downstream task, but it also increases the amount of content the model must reason over, potentially decreasing accuracy, especially if critical information is lost in the middle.",
+    "expected_section": "Abstract, Introduction, Section 2.3",
+    "key_keywords": [
+      "U-shaped performance curve",
+      "long contexts",
+      "primacy bias",
+      "recency bias",
+      "trade-off",
+      "performance degradation"
+    ]
+  },
+  {
+    "paper_id": "2307.03172",
+    "paper_title": "Lost in the Middle: How Language Models Use Long Contexts",
+    "question": "The paper identifies 'primacy bias' and 'recency bias' in language models' use of long contexts. What do these terms refer to in this context?",
+    "ground_truth_answer": "In the context of language models using long inputs, 'primacy bias' refers to the phenomenon where models perform better when relevant information is placed at the very beginning of the input context, while 'recency bias' refers to better performance when relevant information is at the very end of the input context.",
+    "expected_section": "Abstract, Introduction, Section 2.3",
+    "key_keywords": [
+      "primacy bias",
+      "recency bias",
+      "long contexts",
+      "relevant information",
+      "input context",
+      "performance"
+    ]
+  },
+  {
+    "paper_id": "2309.15217",
+    "paper_title": "RAGAS: Automated Evaluation of Retrieval Augmented Generation",
+    "question": "How is the final faithfulness score (F) computed in the Ragas framework, based on the verified statements from the generated answer and the retrieved context?",
+    "ground_truth_answer": "The final faithfulness score, F, is computed as the ratio of the number of statements (si) from the generated answer that can be inferred from the context (c(q)) to the total number of statements extracted from the answer. Mathematically, F = |{si ∈ S | v(si, c(q)) = Yes}| / |S(as(q))|.",
+    "expected_section": "Section 3",
+    "key_keywords": [
+      "faithfulness",
+      "score",
+      "calculation",
+      "formula",
+      "statements"
+    ]
+  },
+  {
+    "paper_id": "2309.15217",
+    "paper_title": "RAGAS: Automated Evaluation of Retrieval Augmented Generation",
+    "question": "What are the two main steps involved in estimating the 'Faithfulness' metric within the Ragas framework?",
+    "ground_truth_answer": "The two main steps involved in estimating faithfulness are: first, using an LLM to extract a set of individual statements from each sentence in the generated answer; and second, for each extracted statement, using another LLM to determine if it can be inferred from the provided context.",
+    "expected_section": "Section 3",
+    "key_keywords": [
+      "faithfulness",
+      "estimation",
+      "LLM",
+      "statements",
+      "context",
+      "verification"
+    ]
+  },
+  {
+    "paper_id": "2309.15217",
+    "paper_title": "RAGAS: Automated Evaluation of Retrieval Augmented Generation",
+    "question": "What core limitations of existing language models and their traditional evaluation methods does the Ragas framework aim to address for Retrieval Augmented Generation (RAG) systems?",
+    "ground_truth_answer": "Ragas addresses the limitations of LLMs regarding their inability to answer questions about recent events or rare knowledge, which RAG systems aim to solve. It also tackles the shortcomings of traditional RAG evaluation methods, such as perplexity or short QA benchmarks, which are often not predictive of downstream performance, inaccessible for closed models (e.g., ChatGPT/GPT-4), or not representative of how the system will be used in practice. Ragas provides a reference-free, automated evaluation framework.",
+    "expected_section": "Abstract, Introduction",
+    "key_keywords": [
+      "Ragas",
+      "limitations",
+      "LLMs",
+      "RAG",
+      "evaluation",
+      "reference-free",
+      "automated"
+    ]
+  },
+  {
+    "paper_id": "2309.15217",
+    "paper_title": "RAGAS: Automated Evaluation of Retrieval Augmented Generation",
+    "question": "According to the Ragas paper, what does 'Context Relevance' refer to in the evaluation of Retrieval Augmented Generation (RAG) systems?",
+    "ground_truth_answer": "'Context Relevance' refers to the idea that the retrieved context should be focused and contain as little irrelevant information as possible. This is important because feeding long context passages to LLMs incurs cost, and LLMs are often less effective in exploiting information from overly long contexts.",
+    "expected_section": "Section 3",
+    "key_keywords": [
+      "Context Relevance",
+      "RAG",
+      "evaluation",
+      "retrieved context",
+      "irrelevant information"
+    ]
+  },
+  {
+    "paper_id": "2106.09685",
+    "paper_title": "LoRA: Low-Rank Adaptation of Large Language Models",
+    "question": "According to the LoRA paper, for GPT-3 175B, what is an example of a sufficiently low rank (r) for LoRA modules compared to the full rank (d)?",
+    "ground_truth_answer": "For GPT-3 175B, a very low rank (r) can be one or two and still suffice, even when the full rank (d) is as high as 12,288.",
+    "expected_section": "Abstract",
+    "key_keywords": [
+      "LoRA",
+      "rank",
+      "GPT-3",
+      "d",
+      "r",
+      "low-rank adaptation"
+    ]
+  },
+  {
+    "paper_id": "2106.09685",
+    "paper_title": "LoRA: Low-Rank Adaptation of Large Language Models",
+    "question": "How does LoRA initialize its low-rank matrices A and B, and what is its strategy for handling the pre-trained weights during adaptation?",
+    "ground_truth_answer": "LoRA initializes the matrix A with a Gaussian distribution (𝒩(0, 𝜎^2)) and the matrix B to zero. During adaptation, it freezes the pre-trained model weights (W) and only optimizes the injected low-rank matrices A and B.",
+    "expected_section": "Section 1 Introduction, Section 4 Our Method, Figure 1",
+    "key_keywords": [
+      "LoRA",
+      "initialization",
+      "frozen weights",
+      "rank decomposition",
+      "adaptation",
+      "A",
+      "B"
+    ]
+  },
+  {
+    "paper_id": "2106.09685",
+    "paper_title": "LoRA: Low-Rank Adaptation of Large Language Models",
+    "question": "What are the primary efficiency and performance advantages of LoRA compared to full fine-tuning and prior parameter-efficient adaptation methods like adapters?",
+    "ground_truth_answer": "LoRA reduces the number of trainable parameters by up to 10,000 times and GPU memory requirement by 3 times compared to full fine-tuning, while performing on-par or better in model quality. Unlike adapters, LoRA introduces no additional inference latency, offers higher training throughput, and reduces storage/task-switching overhead.",
+    "expected_section": "Abstract, Section 1 Introduction, Section 3 Aren’t existing solutions good enough ?",
+    "key_keywords": [
+      "LoRA",
+      "fine-tuning",
+      "adapters",
+      "efficiency",
+      "inference latency",
+      "model quality",
+      "memory",
+      "parameters",
+      "training throughput"
+    ]
+  },
+  {
+    "paper_id": "2106.09685",
+    "paper_title": "LoRA: Low-Rank Adaptation of Large Language Models",
+    "question": "What is the core concept of Low-Rank Adaptation (LoRA) as introduced in the paper?",
+    "ground_truth_answer": "LoRA is a method that freezes the pre-trained model weights and injects trainable rank decomposition matrices into each layer of the Transformer architecture. This allows for adapting large language models to downstream tasks by optimizing a greatly reduced number of parameters (the low-rank matrices) instead of all model parameters.",
+    "expected_section": "Abstract, Section 1 Introduction",
+    "key_keywords": [
+      "LoRA",
+      "Low-Rank Adaptation",
+      "rank decomposition matrices",
+      "Transformer",
+      "parameter-efficient",
+      "adaptation"
+    ]
+  },
+  {
+    "paper_id": "2205.14135",
+    "paper_title": "FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness",
+    "question": "What is the IO complexity of FlashAttention in terms of HBM accesses, as compared to standard attention?",
+    "ground_truth_answer": "FlashAttention requires O(N^2 * d^2 / M) HBM accesses, where N is sequence length, d is the head dimension, and M is the size of SRAM. This is compared to Ω(N*d + N^2) of standard attention.",
+    "expected_section": "Abstract, Section 2.1 Hardware Performance",
+    "key_keywords": [
+      "IO complexity",
+      "HBM accesses",
+      "SRAM",
+      "head dimension",
+      "sequence length"
+    ]
+  },
+  {
+    "paper_id": "2205.14135",
+    "paper_title": "FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness",
+    "question": "How does FlashAttention address the challenge of not storing the large intermediate attention matrix for the backward pass?",
+    "ground_truth_answer": "FlashAttention addresses this by storing the softmax normalization factor from the forward pass, which allows it to quickly recompute attention on-chip in the backward pass, rather than reading the intermediate attention matrix from HBM.",
+    "expected_section": "Abstract, Section 1 Introduction",
+    "key_keywords": [
+      "backward pass",
+      "recompute",
+      "softmax normalization factor",
+      "HBM",
+      "on-chip SRAM"
+    ]
+  },
+  {
+    "paper_id": "2205.14135",
+    "paper_title": "FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness",
+    "question": "Summarize the key empirical benefits of FlashAttention in terms of model training speed and quality improvements for Transformers.",
+    "ground_truth_answer": "FlashAttention empirically provides significant benefits: it trains BERT-large 15% faster, GPT-2 3x faster, and long-range arena 2.4x faster. It also improves model quality, yielding a 0.7 better perplexity on GPT-2 and 6.4 points of lift on long-document classification, and enables better-than-chance performance on Path-X (16K sequence length) and Path-256 (64K sequence length) challenges.",
+    "expected_section": "Abstract, Section 1 Introduction",
+    "key_keywords": [
+      "training speed",
+      "model quality",
+      "perplexity",
+      "wall-clock speedup",
+      "long sequences"
+    ]
+  },
+  {
+    "paper_id": "2205.14135",
+    "paper_title": "FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness",
+    "question": "According to the paper, what is the 'missing principle' that FlashAttention addresses by being 'IO-aware'?",
+    "ground_truth_answer": "The missing principle is making attention algorithms 'IO-aware,' which means carefully accounting for reads and writes between different levels of GPU memory, specifically between fast GPU on-chip SRAM and relatively slow GPU high bandwidth memory (HBM).",
+    "expected_section": "Abstract, Section 1 Introduction",
+    "key_keywords": [
+      "IO-aware",
+      "memory hierarchy",
+      "GPU memory",
+      "SRAM",
+      "HBM"
+    ]
+  },
+  {
+    "paper_id": "2004.04906",
+    "paper_title": "Dense Passage Retrieval for Open-Domain Question Answering",
+    "question": "What is the dimensionality of the vectors produced by the encoders in DPR, and what type of neural network is used for these encoders?",
+    "ground_truth_answer": "The DPR system uses two independent BERT (base, uncased) networks for its question and passage encoders. These encoders produce d-dimensional real-valued vectors, where d = 768, by taking the representation at the [CLS] token as the output.",
+    "expected_section": "Section 3.1",
+    "key_keywords": [
+      "BERT",
+      "encoders",
+      "dimensionality",
+      "768",
+      "d-dimensional"
+    ]
+  },
+  {
+    "paper_id": "2004.04906",
+    "paper_title": "Dense Passage Retrieval for Open-Domain Question Answering",
+    "question": "How does DPR handle the selection of negative passages during training, and what is the objective function used?",
+    "ground_truth_answer": "During training, each instance includes one question, one relevant (positive) passage, and 'n' irrelevant (negative) passages. The objective function optimized is the negative log likelihood of the positive passage, defined as L = - log (esim(qi,p+i) / (esim(qi,p+i) + ∑nj=1 esim(qi,p−i,j))).",
+    "expected_section": "Section 3.2",
+    "key_keywords": [
+      "negative passages",
+      "training",
+      "objective function",
+      "loss function",
+      "negative log likelihood"
+    ]
+  },
+  {
+    "paper_id": "2004.04906",
+    "paper_title": "Dense Passage Retrieval for Open-Domain Question Answering",
+    "question": "What are the main advantages and performance improvements of DPR compared to traditional sparse retrieval methods like BM25 and previous dense retrieval approaches like ORQA?",
+    "ground_truth_answer": "DPR significantly outperforms BM25, showing 9%-19% absolute improvement in top-20 passage retrieval accuracy and 65.2% vs. 42.9% in Top-5 accuracy. Compared to ORQA, DPR results in a substantial improvement in end-to-end QA accuracy (41.5% vs. 33.3%). A key advantage is achieving this without needing computationally intensive additional pretraining, instead relying on fine-tuning BERT-based encoders with question-passage pairs.",
+    "expected_section": "Abstract, Introduction, Contributions",
+    "key_keywords": [
+      "DPR",
+      "BM25",
+      "ORQA",
+      "retrieval accuracy",
+      "end-to-end QA",
+      "state-of-the-art",
+      "pretraining"
+    ]
+  },
+  {
+    "paper_id": "2004.04906",
+    "paper_title": "Dense Passage Retrieval for Open-Domain Question Answering",
+    "question": "What is \"Dense Passage Retrieval\" (DPR) as defined in this paper's context, and how does it contrast with traditional sparse retrieval?",
+    "ground_truth_answer": "Dense Passage Retrieval (DPR) uses dense representations, where embeddings are learned from questions and passages by a simple dual-encoder framework. It contrasts with traditional sparse retrieval (like TF-IDF or BM25) which uses high-dimensional, sparse vectors based on keyword matching, while dense representations map synonyms or paraphrases to vectors that are close to each other.",
+    "expected_section": "Abstract, Introduction, Section 3",
+    "key_keywords": [
+      "Dense Passage Retrieval",
+      "DPR",
+      "sparse retrieval",
+      "dense representations",
+      "embeddings",
+      "TF-IDF",
+      "BM25"
+    ]
+  }
+]
