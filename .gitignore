@@ -10,3 +10,4 @@ data/chroma_db/
 # Retrieval eval outputs (regenerate with: python eval/evaluate_retrieval.py)
 eval/results/
 .pytest_cache/
+.env
