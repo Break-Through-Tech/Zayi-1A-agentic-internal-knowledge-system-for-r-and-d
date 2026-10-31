@@ -196,3 +196,94 @@ def test_unanswerable_question_file_is_well_formed():
     assert len(qs) == 10 and len({q["id"] for q in qs}) == 10
     assert all(q["answerable"] is False and q["paper_id"] is None for q in qs)
     assert all(q["question"].endswith("?") for q in qs)
+
+
+# ---------------------------------------------------------------- run_qa.py integration
+import run_qa  # noqa: E402
+
+RUN_QA = {"id": "gt01", "paper_id": "2106.09685", "question": "What does LoRA freeze?",
+          "key_keywords": ["pre-trained", "rank", "freezes"]}
+RUN_UNANS = {"id": "un01", "paper_id": None, "answerable": False,
+             "question": "What is a good recipe for sourdough bread?", "key_keywords": []}
+
+
+def full_result(answer, cited=(1,), paper="2106.09685"):
+    return {
+        "question": "q", "answer": answer,
+        "sources": [{"rank": 1, "id": "c1", "paper_id": paper, "title": "LoRA", "page_number": 3,
+                     "end_page": 3, "distance": 0.1, "text": LORA_SRC},
+                    {"rank": 2, "id": "c2", "paper_id": "2004.04906", "title": "DPR", "page_number": 5,
+                     "end_page": 5, "distance": 0.2, "text": OTHER_SRC}],
+        "citations": [{"source": n, "paper_id": paper} for n in cited],
+    }
+
+
+def test_score_keeps_ivans_columns_and_adds_the_quality_ones():
+    row = run_qa.score(RUN_QA, full_result("LoRA freezes the pre-trained weights [1]."))
+    assert row["paper_hit"] is True and row["cited_paper"] is True and row["has_citation"] is True
+    assert row["keyword_coverage"] == pytest.approx(2 / 3)  # "rank" is not in the answer text
+    assert row["cited_chunk_support"] == 1.0 and row["hallucination_flag"] is False
+    assert {"grounded_share", "invented_citations", "over_abstained"} <= row.keys()
+
+
+def test_score_saves_sources_and_citations_for_later_rescoring():
+    row = run_qa.score(RUN_QA, full_result("LoRA freezes the pre-trained weights [1]."))
+    assert row["sources"][0]["text"] == LORA_SRC
+    assert row["sources"][0]["page_number"] == 3 and row["citations"][0]["source"] == 1
+    json.dumps(row)  # must be serialisable for the .jsonl
+
+
+def test_unanswerable_question_scores_without_an_expected_paper():
+    row = run_qa.score(RUN_UNANS, full_result("The provided sources do not contain this information.", cited=()))
+    assert row["paper_hit"] is None and row["cited_paper"] is None
+    assert row["said_no_info"] is True and row["abstained_correctly"] is True
+
+
+def test_unanswerable_question_answered_anyway_is_reported():
+    row = run_qa.score(RUN_UNANS, full_result("Mix flour, water and starter [1]."))
+    assert row["abstained_correctly"] is False
+    assert run_qa._status(row).startswith("ANSWERED anyway")
+
+
+def test_summary_keeps_paper_metrics_to_answerable_questions():
+    good = run_qa.score(RUN_QA, full_result("LoRA freezes the pre-trained weights [1]."))
+    abst = run_qa.score(RUN_UNANS, full_result("The provided sources do not contain this information.", cited=()))
+    s = run_qa.summarize([good, abst])
+    assert s["paper_hit"] == 1.0 and s["cited_paper"] == 1.0   # the unanswerable row doesn't drag them down
+    assert s["abstained_correctly_rate"] == 1.0 and s["over_abstained_rate"] == 0.0
+
+
+def test_csv_handles_lists_and_leaves_bulky_fields_in_the_jsonl(tmp_path):
+    row = run_qa.score(RUN_QA, full_result("LoRA freezes weights [1]. Quantum processors in Antarctica train it 999M times [1]."))
+    run_qa.write_csv([row], tmp_path / "out.csv")
+    header, line = (tmp_path / "out.csv").read_text().splitlines()[:2]
+    assert "hallucination_flag" in header and "sources" not in header
+    assert "999M" in line  # unsupported number and sentence are readable in the CSV
+
+
+def test_run_saves_sources_and_rescore_needs_no_gemini(tmp_path):
+    out = tmp_path / "out.jsonl"
+    calls = []
+
+    def answer(question, k=5, **kwargs):
+        calls.append(question)
+        return full_result("LoRA freezes the pre-trained weights [1].")
+
+    run_qa.run([dict(RUN_QA)], out, answer_fn=answer, log=lambda *a: None)
+    saved = json.loads(out.read_text().splitlines()[0])
+    assert saved["sources"][0]["text"] == LORA_SRC
+
+    rows = run_qa.rescore([dict(RUN_QA)], out, log=lambda *a: None)
+    assert len(rows) == 1 and rows[0]["cited_chunk_support"] == 1.0
+    assert calls == [RUN_QA["question"]]  # rescoring did not call answer() again
+
+
+def test_rescore_skips_rows_saved_before_sources_were_kept(tmp_path):
+    out = tmp_path / "old.jsonl"
+    out.write_text(json.dumps({"id": "gt01", "answer": "x", "error": None}) + "\n")
+    assert run_qa.rescore([dict(RUN_QA)], out, log=lambda *a: None) == []
+
+
+def test_unanswerable_file_loads_through_run_qa():
+    pairs = run_qa.load_qa(run_qa.UNANSWERABLE_QA)
+    assert [q["id"] for q in pairs][:2] == ["un01", "un02"] and len(pairs) == 10
