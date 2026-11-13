@@ -22,6 +22,7 @@ A retrieval-augmented generation (RAG) system that answers technical questions a
 - On our 30-question retrieval evaluation, the correct paper appears in the top 5 results for **97%** of questions, and the exact supporting passage for **57%**.
 - Found and fixed a font-encoding issue that had scrambled part of the ReAct paper's appendix text, which raised exact-passage retrieval from 53% to 57%.
 - Gemini calls are wrapped in exponential backoff (tenacity) that retries only temporary errors (rate limits and server errors), and the test suite runs with a mocked Gemini so it uses no API quota.
+
 ---
  
 ## 👩🏽‍💻 **Setup and Installation**
@@ -71,6 +72,13 @@ A retrieval-augmented generation (RAG) system that answers technical questions a
    python -m pytest -v -m "not slow"         # skip the tests that build a Chroma store
    python eval/evaluate_retrieval.py         # retrieval metrics on our 30 Q&A pairs
 ```
+
+8. **Run the full pipeline on the ground-truth set** (uses your Gemini quota; results are saved one question at a time, so rerunning the same command skips questions already done)
+```bash
+   python eval/run_qa.py --fake              # dry run: real retrieval, fake answers, no Gemini calls
+   python eval/run_qa.py --limit 3           # try 3 questions first
+   python eval/run_qa.py                     # all 40 questions -> eval/results/qa_run.csv
+```
  
 ---
  
@@ -78,7 +86,7 @@ A retrieval-augmented generation (RAG) system that answers technical questions a
  
 This project is part of the [Break Through Tech AI Program](https://www.breakthroughtech.org/), where fellows work in teams on an applied machine learning challenge from a host company. Our host company is **Zayi**, a research-led innovation hub that builds AI and software systems for knowledge management and automation.
  
-**Objective and scope.** Engineers at Zayi spend significant time manually reading dense research PDFs to extract architectural patterns for their R&D pipeline. Our goal is an internal knowledge system that retrieves the relevant passages from a curated set of ArXiv papers and drafts cited answers and summary memos, running as a local prototype in Google Colab. The project runs in three milestones:
+**Objective and scope.** Engineers at Zayi spend significant time manually reading dense research PDFs to extract architectural patterns for their R&D pipeline. Our goal is an internal knowledge system that retrieves the relevant passages from a curated set of ArXiv papers and drafts cited answers and summary memos, running as a local prototype in Google Colab. The target workflow is a **"Draft Triage Memo"**: given a specific technical question, produce a short memo that answers it and is grounded entirely in the source papers, with a citation for every claim. The project runs in three milestones:
  
 | Month     | Milestone                         | Focus |
 |-----------|-----------------------------------|-------|
@@ -113,10 +121,12 @@ Per-paper page, word and character counts are in `data/paper_profile_summary.csv
 - Removed ArXiv headers, running page headers, and page numbers, including numbers that leaked across page boundaries.
 - Rejoined words hyphenated across line breaks and normalized Unicode to plain ASCII.
 - Repaired a font-encoding cipher in the ReAct paper's appendix, where the PDF's custom font had turned text into shifted characters.
+
 **Challenges and assumptions.**
 - PDF-extracted text is noisy: two-column layouts, headers and footers mixed into body text, and font-encoding artifacts.
 - Each paper's References section produces chunks dense with other papers' titles. We tested removing them (918 chunks down to 736) and found no change in retrieval scores, so we kept them for now.
 - Page numbers are tracked through cleaning and chunking so every chunk can be cited by page.
+
 ---
  
 ## 🧠 **Model Development**
@@ -137,10 +147,13 @@ question
 - **Generation:** Gemini through `langchain-google-genai`, temperature 0. The prompt requires a bracketed citation after every claim and the reply "The provided sources do not contain this information." when the answer isn't in the sources. Citations to source numbers that weren't retrieved are discarded.
 - **Error handling:** tenacity retries rate limits (429), server errors (500, 502, 503, 504), timeouts and dropped connections with randomized exponential backoff (up to 6 attempts), and fails immediately on errors that can't succeed on retry, such as a bad key. The API key is read from `.env` or Colab Secrets and never printed.
 - **Shared interface:** `answer(question, k=5)` returns the answer, its citations, and every retrieved source, so the evaluation scripts and the Colab notebook all use the same code path.
+
 **Evaluation setup**
 - **Retrieval set:** 30 questions across the 10 papers, each with evidence phrases from the paper (`eval/qa_pairs.json`). A retrieved chunk counts as correct if it comes from the expected paper and contains one of the evidence phrases.
 - **Ground-truth set:** 40 questions from our Challenge Advisor, 4 per paper, each with a reference answer, expected section and key keywords (`data/ground_truth_qa.json`).
 - **Metrics:** hit@1, hit@3 and hit@5 for the exact passage, MRR, paper hit@5 (any chunk from the right paper), and for generated answers: whether the right paper is cited and keyword coverage against the reference answer.
+- **Answer-quality checks (in review, PR #24):** `eval/answer_checks.py` scores each generated answer for citation support (do the cited chunks contain the key terms), grounding (are the answer's sentences and numbers found in the retrieved sources, a word-overlap approximation that makes no Gemini calls), and abstention, using 10 extra questions whose answers are not in the papers (`eval/unanswerable_qa.json`). Saved runs can be re-scored without calling Gemini again (`python eval/run_qa.py --rescore`).
+
 ---
  
 ## 📈 **Results & Key Findings**
@@ -158,6 +171,7 @@ question
 - **Cleaning matters.** Fixing the scrambled ReAct appendix text alone raised exact-passage retrieval by 4 points.
 - **Bibliography chunks were not hurting retrieval** on this set. None appeared in the top 5 for any question, with or without filtering.
 - **Answer-level results on the 40-question ground-truth set are in progress** (`eval/run_qa.py`).
+
 ---
  
 ## 🚀 **Next Steps**
@@ -165,13 +179,31 @@ question
 **Current limitations**
 - Exact-passage retrieval is 57% in the top 5, and the best passage is rarely ranked first.
 - The evidence-phrase check is strict: a chunk that paraphrases the evidence counts as a miss, so these scores are a lower bound.
-- Answer quality (citation accuracy, hallucinations, saying "I don't know") is not yet measured at scale.
+- Answer quality (citation accuracy, hallucinations, saying "I don't know") is not yet measured at scale, and the answer-quality thresholds still need tuning on real Gemini answers.
+
 **November plan**
-- Add answer-level checks: citation correctness, unsupported claims, and correct refusals on questions the papers can't answer.
-- Try semantic chunking and tune chunk size, overlap and breakpoint settings.
+- Run the 40 ground-truth questions and the 10 unanswerable questions through the full pipeline with the answer-quality checks.
+- Switch from recursive to semantic chunking and compare retrieval accuracy against the current approach, tuning chunk size, overlap and breakpoint settings.
 - Tune the prompt and the number of retrieved chunks (k) to improve citation accuracy.
 - Run every configuration through the same evaluation and document the best one.
-**With more time:** a local cross-encoder reranker, an agentic self-correction loop that rewrites the query when retrieved context is poor, and a simple Gradio interface for a human-in-the-loop review step.
+
+**With more time**
+- Local reranking (for example FlashRank or a cross-encoder) to rank the exact passage higher without extra API calls.
+- Agentic self-correction with LangGraph: an evaluator step that rewrites the query and retrieves again when the context looks irrelevant.
+- A lightweight Gradio interface for the human-in-the-loop memo approval step.
+- A larger paper corpus and ground-truth Q&A set.
+
+---
+
+## 📁 **Repository Structure**
+
+```
+data/        Curated papers, cleaned text, chunks, and the ground-truth Q&A set
+notebooks/   Data exploration, chunking, and embedding/storage notebooks
+src/         Pipeline: cleaning, chunking, vector store, retrieval, generation, config, Gemini client
+eval/        Retrieval and full-pipeline evaluation scripts and Q&A sets
+tests/       Pytest suite for the pipeline and components (Gemini is mocked)
+```
  
 ---
  
@@ -195,6 +227,7 @@ The 10 papers in the dataset:
 8. Hu et al., 2021. [LoRA: Low-Rank Adaptation of Large Language Models](https://arxiv.org/abs/2106.09685)
 9. Dao et al., 2022. [FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness](https://arxiv.org/abs/2205.14135)
 10. Karpukhin et al., 2020. [Dense Passage Retrieval for Open-Domain Question Answering](https://arxiv.org/abs/2004.04906)
+
 Tools: [LangChain](https://python.langchain.com/), [ChromaDB](https://docs.trychroma.com/), [sentence-transformers](https://www.sbert.net/) with [BAAI/bge-small-en-v1.5](https://huggingface.co/BAAI/bge-small-en-v1.5), [Gemini API](https://ai.google.dev/), [tenacity](https://tenacity.readthedocs.io/).
  
 ---
