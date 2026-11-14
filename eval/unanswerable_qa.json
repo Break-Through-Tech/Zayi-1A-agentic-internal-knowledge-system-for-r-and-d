@@ -1,0 +1,117 @@
+[
+  {
+    "id": "un01",
+    "paper_id": null,
+    "answerable": false,
+    "category": "out of domain",
+    "question": "What is a good recipe for sourdough bread?",
+    "probe_terms": [
+      "sourdough"
+    ],
+    "key_keywords": []
+  },
+  {
+    "id": "un02",
+    "paper_id": null,
+    "answerable": false,
+    "category": "out of domain",
+    "question": "At what temperature does water boil at the summit of Mount Everest?",
+    "probe_terms": [
+      "everest",
+      "boil"
+    ],
+    "key_keywords": []
+  },
+  {
+    "id": "un03",
+    "paper_id": null,
+    "answerable": false,
+    "category": "out of domain",
+    "question": "What is the capital city of Australia?",
+    "probe_terms": [
+      "canberra"
+    ],
+    "key_keywords": []
+  },
+  {
+    "id": "un04",
+    "paper_id": null,
+    "answerable": false,
+    "category": "newer than the papers",
+    "question": "How many training tokens were used to pre-train GPT-5?",
+    "probe_terms": [
+      "gpt-5"
+    ],
+    "key_keywords": []
+  },
+  {
+    "id": "un05",
+    "paper_id": null,
+    "answerable": false,
+    "category": "newer than the papers",
+    "question": "How does FlashAttention-3 use FP8 on Hopper GPUs?",
+    "probe_terms": [
+      "flashattention-3",
+      "fp8",
+      "hopper"
+    ],
+    "key_keywords": []
+  },
+  {
+    "id": "un06",
+    "paper_id": null,
+    "answerable": false,
+    "category": "newer than the papers",
+    "question": "Which GPU cluster configuration was used to pre-train Llama 3?",
+    "probe_terms": [
+      "llama 3"
+    ],
+    "key_keywords": []
+  },
+  {
+    "id": "un07",
+    "paper_id": null,
+    "answerable": false,
+    "category": "related topic, not covered",
+    "question": "What accuracy does the Switch Transformer reach on SuperGLUE?",
+    "probe_terms": [
+      "switch transformer",
+      "superglue"
+    ],
+    "key_keywords": []
+  },
+  {
+    "id": "un08",
+    "paper_id": null,
+    "answerable": false,
+    "category": "related topic, not covered",
+    "question": "What is the Elo rating of a ReAct agent on Chatbot Arena?",
+    "probe_terms": [
+      "chatbot arena",
+      "elo"
+    ],
+    "key_keywords": []
+  },
+  {
+    "id": "un09",
+    "paper_id": null,
+    "answerable": false,
+    "category": "false premise about a paper",
+    "question": "What chunk size does the Self-RAG paper recommend for legal contracts?",
+    "probe_terms": [
+      "legal contract"
+    ],
+    "key_keywords": []
+  },
+  {
+    "id": "un10",
+    "paper_id": null,
+    "answerable": false,
+    "category": "false premise about a paper",
+    "question": "What BLEU score does RAGAS achieve on machine translation?",
+    "probe_terms": [
+      "machine translation"
+    ],
+    "key_keywords": []
+  }
+]
