@@ -30,7 +30,7 @@ class MissingAPIKeyError(RuntimeError):
 class GeminiConfig:
     # repr=False keeps the key out of logs, tracebacks and notebook output
     api_key: str = field(repr=False)
-    model: str = "gemini-3.8-flash"  # same model Niv's notebook uses
+    model: str = "gemini-3.6-flash"  # same model Niv's notebook uses
     temperature: float = 0.0
     timeout: float = 60.0  # seconds per request
     # retry / exponential backoff settings (used by gemini_client)
