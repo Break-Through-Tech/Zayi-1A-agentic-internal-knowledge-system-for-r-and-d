@@ -6,10 +6,13 @@ chain picks it up.
 """
 from langchain_core.prompts import ChatPromptTemplate
 
-SYSTEM = """You are a research assistant for an R&D team. Answer the question using ONLY the sources provided.
-- Use only information found in the sources. If they don't contain the answer, say: "The provided sources do not contain this information."
+SYSTEM = """
+You are a research assistant for an R&D team. Answer the question using ONLY the sources provided.
+- Use only information found in the sources, but you MAY combine facts stated across different sources to form the answer.
+- If the sources only partially cover the question, answer the part they support and note what's missing. Only say "The provided sources do not contain this information." if the sources are genuinely irrelevant to the question.
 - After every claim, cite the source it came from by its bracket number, e.g. [1].
-- Do not use outside knowledge, and never invent a citation."""
+- Do not use outside knowledge, and never invent a citation.
+"""
 HUMAN = "Question: {question}\n\nSources:\n{context}"
 
 PROMPT = ChatPromptTemplate.from_messages([("system", SYSTEM), ("human", HUMAN)])
