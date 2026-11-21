@@ -30,6 +30,7 @@ import vector_store
 from generation import PROMPT, format_sources, source_label
 
 DEFAULT_K = 5
+DEFAULT_FETCH_K = 20  # candidates fetched from Chroma when a reranker is used
 
 # Matches [1], [2, 3] and [1][2]; each bracket may hold a comma-separated list
 _CITATION_RE = re.compile(r"\[(\d+(?:\s*,\s*\d+)*)\]")
@@ -41,25 +42,34 @@ class ChromaRetriever(BaseRetriever):
     Uses vector_store.query(), so questions are embedded with the same model and
     query prefix as the stored chunks. Each Document keeps the chunk's metadata
     plus its Chroma `id` and cosine `distance`.
+
+    Optional `reranker` (reranker.CrossEncoderReranker): fetch `fetch_k`
+    candidates from Chroma, rerank them, keep the top `k`.
     """
 
     k: int = DEFAULT_K
     where: Optional[dict] = None  # Chroma metadata filter, e.g. {"paper_id": "2005.11401"}
     collection: Any = None  # defaults to the store at vector_store.DB_PATH
+    reranker: Any = None
+    fetch_k: int = DEFAULT_FETCH_K
 
     def _get_relevant_documents(
         self, query: str, *, run_manager: CallbackManagerForRetrieverRun
     ) -> list[Document]:
         if self.collection is None:
             self.collection = vector_store.get_collection()
-        results = vector_store.query(query, k=self.k, where=self.where, collection=self.collection)
-        return [
+        n = max(self.k, self.fetch_k) if self.reranker is not None else self.k
+        results = vector_store.query(query, k=n, where=self.where, collection=self.collection)
+        docs = [
             Document(
                 page_content=r["text"],
                 metadata={**r["metadata"], "id": r["id"], "distance": r["distance"]},
             )
             for r in results
         ]
+        if self.reranker is not None:
+            docs = self.reranker.rerank(query, docs, self.k)
+        return docs
 
 
 def parse_citations(answer_text, docs):
@@ -125,15 +135,22 @@ def _gemini():
     return _default_llm, _default_config
 
 
-def answer(question, k=DEFAULT_K, *, where=None, llm=None, retry_config=None, collection=None):
+def answer(question, k=DEFAULT_K, *, where=None, llm=None, retry_config=None, collection=None,
+           rerank=False, fetch_k=DEFAULT_FETCH_K, reranker=None):
     """Answer a question from the papers, with citations (paper ID and page).
 
     `llm` defaults to Gemini with backoff; pass a fake chat model in tests.
     `where` restricts retrieval with a Chroma metadata filter.
+    `rerank=True` reranks `fetch_k` Chroma candidates with a cross-encoder
+    (src/reranker.py) before keeping the top k; `reranker` overrides the model.
     """
     if llm is None:
         llm, retry_config = _gemini()
-    retriever = ChromaRetriever(k=k, where=where, collection=collection)
+    if rerank and reranker is None:
+        from reranker import CrossEncoderReranker
+
+        reranker = CrossEncoderReranker()
+    retriever = ChromaRetriever(k=k, where=where, collection=collection, reranker=reranker, fetch_k=fetch_k)
     out = build_chain(retriever, llm, retry_config).invoke({"question": question})
     docs = out["docs"]
     return {
@@ -160,9 +177,10 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("question")
     parser.add_argument("-k", type=int, default=DEFAULT_K)
+    parser.add_argument("--rerank", action="store_true", help="rerank with a cross-encoder (src/reranker.py)")
     args = parser.parse_args()
 
-    result = answer(args.question, k=args.k)
+    result = answer(args.question, k=args.k, rerank=args.rerank)
     print(result["answer"], "\n")
     print("Citations:")
     for c in result["citations"]:
