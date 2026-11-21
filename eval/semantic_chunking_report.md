@@ -40,9 +40,9 @@ On the semantic chunks now in the pipeline (pct=80 buf=3 min=500 max=1500):
 | + ms-marco-MiniLM-L6-v2 | 0.20 | 0.60 | 0.36 | 0.60 | ~0.7 s |
 | + bge-reranker-base | 0.33 | 0.63 | 0.44 | 0.63 | ~5 s |
 
-Reranking helps recursive chunks much more than semantic ones (semantic chunks already group related sentences, so the first ranking is better to begin with). The reranker stays optional (`answer(q, rerank=True)`); on semantic chunks `bge-reranker-base` is the one worth using (`CrossEncoderReranker("BAAI/bge-reranker-base")`).
+Reranking helps recursive chunks much more than semantic ones (semantic chunks already group related sentences, so the first ranking is better to begin with). The reranker is now **on by default** in `answer()` with `bge-reranker-base`, the one that helps on semantic chunks (`rerank=False` skips it; ~5 s per question on CPU).
 
-Next: decide as a team whether to turn reranking on by default (it changes everyone's run_qa results and adds ~5 s per question), and re-test chunking if the Q&A set grows.
+Next: re-run the 40-question answer evaluation (`eval/run_qa.py`) with the new chunks + reranker, and re-test chunking if the Q&A set grows.
 <!-- end conclusion -->
 
 ## Baseline vs best semantic settings

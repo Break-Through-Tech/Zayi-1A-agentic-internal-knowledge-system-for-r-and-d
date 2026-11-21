@@ -147,6 +147,7 @@ question
 - **Vector store:** ChromaDB, persisted locally, cosine distance.
 - **Generation:** Gemini through `langchain-google-genai`, temperature 0. The prompt requires a bracketed citation after every claim and the reply "The provided sources do not contain this information." when the answer isn't in the sources. Citations to source numbers that weren't retrieved are discarded.
 - **Error handling:** tenacity retries rate limits (429), server errors (500, 502, 503, 504), timeouts and dropped connections with randomized exponential backoff (up to 6 attempts), and fails immediately on errors that can't succeed on retry, such as a bad key. The API key is read from `.env` or Colab Secrets and never printed.
+- **Reranking:** Chroma returns the 20 closest chunks, then a local cross-encoder (`BAAI/bge-reranker-base`, `src/reranker.py`) reads each one together with the question and keeps the best 5 (about 5 s per question on a laptop CPU; `rerank=False` skips it).
 - **Shared interface:** `answer(question, k=5)` returns the answer, its citations, and every retrieved source, so the evaluation scripts and the Colab notebook all use the same code path.
 
 **Evaluation setup**
@@ -166,13 +167,13 @@ question
 | Before ReAct text fix | 918 | 0.10 | 0.33 | 0.53 | 0.25 | 0.97 |
 | Recursive chunks (1,000 / 125) | 918 | 0.10 | 0.33 | 0.57 | 0.26 | 0.97 |
 | Bibliography chunks removed | 736 | 0.10 | 0.33 | 0.57 | 0.26 | 0.97 |
-| **Semantic chunks (current pipeline)** | **1,106** | **0.20** | **0.43** | **0.60** | **0.34** | **1.00** |
-| Semantic chunks + reranker bge-reranker-base (optional) | 1,106 | 0.33 | - | 0.63 | 0.44 | - |
+| Semantic chunks, no reranker | 1,106 | 0.20 | 0.43 | 0.60 | 0.34 | 1.00 |
+| **Semantic chunks + reranker bge-reranker-base (current pipeline)** | **1,106** | **0.33** | - | **0.63** | **0.44** | - |
 | Recursive chunks + reranker ms-marco-MiniLM (for comparison) | 918 | 0.27 | 0.63 | 0.73 | 0.46 | - |
  
 **Key findings**
 - **Semantic chunking (November)** doubled how often the exact passage is ranked first (10% to 20%) and found the right paper for every question, at the cost of more, smaller chunks. With the same amount of text sent to Gemini it finds the passage about as often as recursive chunks, and the buffer size (how many neighbouring sentences are compared) mattered far more than the breakpoint threshold. Details: `eval/semantic_chunking_report.md`.
-- **A cross-encoder reranker helps most on recursive chunks** (passage in top 5: 57% to 73%); on semantic chunks the gain is smaller (bge-reranker-base: ranked first 20% to 33%, about 5 s per question on CPU). It is optional for now: `answer(q, rerank=True)`.
+- **A cross-encoder reranker helps most on recursive chunks** (passage in top 5: 57% to 73%); on semantic chunks the gain is smaller (bge-reranker-base: ranked first 20% to 33%, about 5 s per question on CPU). It is on by default in `answer()` (retrieve 20, rerank, keep 5); pass `rerank=False` (or `--no-rerank` on the command line) for the faster path.
 - **Retrieval finds the right paper almost every time (97%), but not always the right passage (57%).** The exact passage is ranked first only 10% of the time, so the most useful improvement for November is retrieving and ranking the precise passage, which is also the target our Challenge Advisor set.
 - **Cleaning matters.** Fixing the scrambled ReAct appendix text alone raised exact-passage retrieval by 4 points.
 - **Bibliography chunks were not hurting retrieval** on this set. None appeared in the top 5 for any question, with or without filtering.
@@ -189,12 +190,11 @@ question
 
 **November plan**
 - Run the 40 ground-truth questions and the 10 unanswerable questions through the full pipeline with the answer-quality checks.
-- ~~Switch from recursive to semantic chunking~~ Done: semantic chunking with tuned breakpoint threshold, buffer size and min/max chunk size (`eval/semantic_chunking_report.md`). A cross-encoder reranker (`answer(q, rerank=True)`) is available; deciding whether to turn it on by default is still open.
+- ~~Switch from recursive to semantic chunking~~ Done: semantic chunking with tuned breakpoint threshold, buffer size and min/max chunk size (`eval/semantic_chunking_report.md`). A cross-encoder reranker (`BAAI/bge-reranker-base`) now reorders the top 20 chunks by default.
 - Tune the prompt and the number of retrieved chunks (k) to improve citation accuracy.
 - Run every configuration through the same evaluation and document the best one.
 
 **With more time**
-- Local reranking (for example FlashRank or a cross-encoder) to rank the exact passage higher without extra API calls.
 - Agentic self-correction with LangGraph: an evaluator step that rewrites the query and retrieves again when the context looks irrelevant.
 - A lightweight Gradio interface for the human-in-the-loop memo approval step.
 - A larger paper corpus and ground-truth Q&A set.

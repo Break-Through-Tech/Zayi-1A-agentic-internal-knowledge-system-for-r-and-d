@@ -8,13 +8,15 @@ Shared interface:
     result["sources"]    # every retrieved chunk, in rank order (for debugging / evaluation)
 
 How the pieces connect:
-    question -> ChromaRetriever (top-k chunks, vector_store.py)
+    question -> ChromaRetriever (top-20 chunks, vector_store.py)
+             -> cross-encoder reranker keeps the best k (reranker.py; rerank=False to skip)
              -> format_sources + PROMPT (generation.py, Niv)
              -> Gemini with exponential backoff (gemini_client.py, Godwin)
              -> answer text -> citations parsed from its [n] markers
 
 Usage (from the repo root, needs GOOGLE_API_KEY and a built store):
     python src/rag_chain.py "What does LoRA stand for?" -k 5
+    python src/rag_chain.py "What does LoRA stand for?" --no-rerank   # faster, less accurate
 """
 import argparse
 import re
@@ -136,17 +138,20 @@ def _gemini():
 
 
 def answer(question, k=DEFAULT_K, *, where=None, llm=None, retry_config=None, collection=None,
-           rerank=False, fetch_k=DEFAULT_FETCH_K, reranker=None):
+           rerank=True, fetch_k=DEFAULT_FETCH_K, reranker=None):
     """Answer a question from the papers, with citations (paper ID and page).
 
     `llm` defaults to Gemini with backoff; pass a fake chat model in tests.
     `where` restricts retrieval with a Chroma metadata filter.
-    `rerank=True` reranks `fetch_k` Chroma candidates with a cross-encoder
-    (src/reranker.py) before keeping the top k; `reranker` overrides the model.
+    By default the `fetch_k` Chroma candidates are reranked with a cross-encoder
+    (src/reranker.py, bge-reranker-base) before keeping the top k; `reranker`
+    overrides the model and `rerank=False` turns reranking off.
     """
     if llm is None:
         llm, retry_config = _gemini()
-    if rerank and reranker is None:
+    if not rerank:
+        reranker = None
+    elif reranker is None:
         from reranker import CrossEncoderReranker
 
         reranker = CrossEncoderReranker()
@@ -177,10 +182,10 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("question")
     parser.add_argument("-k", type=int, default=DEFAULT_K)
-    parser.add_argument("--rerank", action="store_true", help="rerank with a cross-encoder (src/reranker.py)")
+    parser.add_argument("--no-rerank", action="store_true", help="skip the cross-encoder reranker (faster)")
     args = parser.parse_args()
 
-    result = answer(args.question, k=args.k, rerank=args.rerank)
+    result = answer(args.question, k=args.k, rerank=not args.no_rerank)
     print(result["answer"], "\n")
     print("Citations:")
     for c in result["citations"]:

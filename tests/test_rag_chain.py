@@ -156,6 +156,24 @@ def test_retriever_fetches_more_and_reranks(monkeypatch):
     assert asked["k"] == 2                                  # no reranker: plain top-k
 
 
+def test_answer_reranks_by_default(monkeypatch):
+    from reranker import DEFAULT_RERANKER
+
+    made = []
+
+    def fake_retriever(**kw):
+        made.append(kw)
+        return FixedRetriever(docs=DOCS[:kw["k"]], seen=[])
+
+    monkeypatch.setattr(rag_chain, "ChromaRetriever", fake_retriever)
+    rag_chain.answer("q", k=2, llm=fake_llm("x"))
+    rag_chain.answer("q", k=2, llm=fake_llm("x"), rerank=False)
+
+    assert made[0]["reranker"].model_name == DEFAULT_RERANKER  # model is only loaded when used
+    assert made[0]["fetch_k"] == rag_chain.DEFAULT_FETCH_K
+    assert made[1]["reranker"] is None
+
+
 # ---------------------------------------------------------------- real Chroma retriever
 @pytest.mark.slow
 def test_chroma_retriever_and_answer_on_small_store(tmp_path):

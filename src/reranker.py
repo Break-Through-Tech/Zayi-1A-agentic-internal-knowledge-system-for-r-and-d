@@ -8,12 +8,17 @@ is more accurate but too slow to run on all chunks, so we:
     2. rerank only those with the cross-encoder,
     3. keep the top k.
 
-Model chosen in eval/tune_semantic_chunking.py (see eval/semantic_chunking_report.md).
+On by default in rag_chain.answer(). Model chosen in eval/tune_semantic_chunking.py
+(see eval/semantic_chunking_report.md): on our semantic chunks bge-reranker-base
+raised hit@1 from 0.20 to 0.33 and MRR from 0.34 to 0.44, while the 10x faster
+ms-marco-MiniLM-L6-v2 barely changed anything. Cost: ~5 s per question on a
+laptop CPU (much less on a GPU / Colab), plus a ~1 GB model download the first time.
 Runs locally through sentence-transformers -- no API key, no Gemini quota.
 """
 from langchain_core.documents import Document
 
-DEFAULT_RERANKER = "cross-encoder/ms-marco-MiniLM-L6-v2"
+DEFAULT_RERANKER = "BAAI/bge-reranker-base"
+FAST_RERANKER = "cross-encoder/ms-marco-MiniLM-L6-v2"
 
 _models = {}
 
