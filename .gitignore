@@ -11,3 +11,6 @@ data/chroma_db/
 eval/results/
 .pytest_cache/
 .env
+
+# Baseline recursive chunks (regenerate with: python src/chunking.py)
+data/chunks_recursive.json

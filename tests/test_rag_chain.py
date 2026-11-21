@@ -123,6 +123,57 @@ def test_answer_without_key_needs_injected_llm(monkeypatch):
     assert [s["rank"] for s in result["sources"]] == [1, 2]
 
 
+# ---------------------------------------------------------------- reranker
+class KeywordCrossEncoder:
+    """Fake cross-encoder: score = how often the question's last word appears in the chunk."""
+
+    def predict(self, pairs):
+        return [text.lower().count(q.split()[-1].lower()) for q, text in pairs]
+
+
+def test_retriever_fetches_more_and_reranks(monkeypatch):
+    from reranker import CrossEncoderReranker
+
+    texts = ["nothing here", "flash once", "flash flash flash", "other", "flash flash"]
+    asked = {}
+
+    def fake_query(question, k, where=None, collection=None):
+        asked["k"] = k
+        return [{"id": f"p_{i}", "distance": 0.1 * i, "text": t,
+                 "metadata": {"paper_id": "p", "title": "P", "page_number": 1, "end_page": 1}}
+                for i, t in enumerate(texts[:k])]
+
+    monkeypatch.setattr(rag_chain.vector_store, "query", fake_query)
+    retriever = rag_chain.ChromaRetriever(k=2, fetch_k=5, collection="fake",
+                                          reranker=CrossEncoderReranker(model=KeywordCrossEncoder()))
+    docs = retriever.invoke("what is flash")
+
+    assert asked["k"] == 5                                  # fetched fetch_k candidates
+    assert [d.page_content for d in docs] == ["flash flash flash", "flash flash"]  # kept best k
+    assert docs[0].metadata["rerank_score"] == 3 and docs[0].metadata["id"] == "p_2"
+
+    rag_chain.ChromaRetriever(k=2, collection="fake").invoke("what is flash")
+    assert asked["k"] == 2                                  # no reranker: plain top-k
+
+
+def test_answer_reranks_by_default(monkeypatch):
+    from reranker import DEFAULT_RERANKER
+
+    made = []
+
+    def fake_retriever(**kw):
+        made.append(kw)
+        return FixedRetriever(docs=DOCS[:kw["k"]], seen=[])
+
+    monkeypatch.setattr(rag_chain, "ChromaRetriever", fake_retriever)
+    rag_chain.answer("q", k=2, llm=fake_llm("x"))
+    rag_chain.answer("q", k=2, llm=fake_llm("x"), rerank=False)
+
+    assert made[0]["reranker"].model_name == DEFAULT_RERANKER  # model is only loaded when used
+    assert made[0]["fetch_k"] == rag_chain.DEFAULT_FETCH_K
+    assert made[1]["reranker"] is None
+
+
 # ---------------------------------------------------------------- real Chroma retriever
 @pytest.mark.slow
 def test_chroma_retriever_and_answer_on_small_store(tmp_path):

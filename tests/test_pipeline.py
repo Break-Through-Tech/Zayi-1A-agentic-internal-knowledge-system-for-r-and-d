@@ -77,9 +77,43 @@ def test_committed_cleaned_file_is_up_to_date(cleaned):
 
 
 # ---------------------------------------------------------------- chunking
-def test_committed_chunks_are_up_to_date(chunks):
-    """data/chunks.json should equal a fresh run of src/chunking.py."""
-    assert chunks == COMMITTED_CHUNKS
+# data/chunks.json holds semantic chunks (src/semantic_chunking.py); the
+# `chunks` fixture is the recursive baseline (src/chunking.py).
+def test_committed_chunks_are_exact_slices_of_cleaned_text():
+    """Every committed chunk is the cleaned text at its start_index, with the right pages."""
+    import semantic_chunking
+
+    limit = semantic_chunking.SemanticSettings().max_chunk_size
+    for p in COMMITTED_CLEAN:
+        full = chunking.SEP.join(pg["text"].strip() for pg in p["pages"])
+        mine = [c for c in COMMITTED_CHUNKS if c["metadata"]["paper_id"] == p["id"]]
+        assert mine, p["id"]
+        for c in mine:
+            m, text = c["metadata"], c["page_content"]
+            assert full[m["start_index"]:m["start_index"] + len(text)] == text
+            assert 0 < len(text) <= limit
+            assert 1 <= m["page_number"] <= m["end_page"] <= m["total_pages"]
+            assert m["chunker"] == "semantic"
+
+
+def test_committed_chunks_cover_every_page():
+    for p in COMMITTED_CLEAN:
+        covered = set()
+        for c in COMMITTED_CHUNKS:
+            if c["metadata"]["paper_id"] == p["id"]:
+                covered.update(range(c["metadata"]["page_number"], c["metadata"]["end_page"] + 1))
+        nonempty = {pg["page_number"] for pg in p["pages"] if pg["text"].strip()}
+        assert nonempty <= covered, f"{p['id']} pages never chunked: {sorted(nonempty - covered)}"
+
+
+@pytest.mark.slow
+def test_committed_chunks_are_up_to_date():
+    """data/chunks.json should equal a fresh run of src/semantic_chunking.py
+    (loads the embedding model, ~3 min on CPU). If this fails:
+    python src/semantic_chunking.py && python src/vector_store.py build"""
+    import semantic_chunking
+
+    assert semantic_chunking.semantic_chunk_papers(COMMITTED_CLEAN) == COMMITTED_CHUNKS
 
 
 def test_chunk_metadata(chunks):

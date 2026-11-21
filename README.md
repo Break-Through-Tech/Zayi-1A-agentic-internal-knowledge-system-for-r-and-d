@@ -17,9 +17,9 @@ A retrieval-augmented generation (RAG) system that answers technical questions a
  
 ## 🎯 **Project Highlights**
  
-- Built a baseline RAG pipeline over 10 foundational ML papers (218 pages, about 122,000 words): text cleaning, chunking into 918 passages, local embeddings with `BAAI/bge-small-en-v1.5`, a ChromaDB vector store, and answer generation with the Gemini API through LangChain.
+- Built a baseline RAG pipeline over 10 foundational ML papers (218 pages, about 122,000 words): text cleaning, semantic chunking into 1,106 passages, local embeddings with `BAAI/bge-small-en-v1.5`, a ChromaDB vector store, and answer generation with the Gemini API through LangChain.
 - Every answer cites its sources by paper ID and page range, and the prompt instructs the model to say when the sources don't contain the answer instead of guessing.
-- On our 30-question retrieval evaluation, the correct paper appears in the top 5 results for **97%** of questions, and the exact supporting passage for **57%**.
+- On our 30-question retrieval evaluation, the correct paper appears in the top 5 results for **100%** of questions, and the exact supporting passage for **60%** (ranked first for 20%, up from 10% after switching to semantic chunking).
 - Found and fixed a font-encoding issue that had scrambled part of the ReAct paper's appendix text, which raised exact-passage retrieval from 53% to 57%.
 - Gemini calls are wrapped in exponential backoff (tenacity) that retries only temporary errors (rate limits and server errors), and the test suite runs with a mocked Gemini so it uses no API quota.
 
@@ -53,7 +53,8 @@ A retrieval-augmented generation (RAG) system that answers technical questions a
 4. **Data.** The papers' pre-extracted text, the cleaned text and the chunks are already in `data/`, so no download is needed. To regenerate them:
 ```bash
    python src/cleaning.py      # data/curated_papers_text.json -> data/cleaned_papers_text.json
-   python src/chunking.py      # -> data/chunks.json
+   python src/semantic_chunking.py   # -> data/chunks.json (semantic chunks used by the pipeline)
+   python src/chunking.py            # optional: recursive baseline -> data/chunks_recursive.json
 ```
  
 5. **Build the vector store** (a few minutes on CPU; downloads the embedding model the first time):
@@ -141,11 +142,12 @@ question
   -> answer text + citations (paper ID, title, pages)            (rag_chain.answer)
 ```
  
-- **Chunking:** LangChain `RecursiveCharacterTextSplitter`, chunk size 1,000 characters with 125 characters of overlap, applied to each paper's page text with page numbers mapped back to every chunk (918 chunks, about 950 characters on average).
+- **Chunking:** semantic chunking (`src/semantic_chunking.py`, the SemanticChunker algorithm on our bge-small model): each paper is split into sentences, each sentence is embedded together with 3 neighbours on each side, and the paper is cut where the distance between neighbouring windows is above its 80th percentile, with chunks kept between 500 and 1,500 characters. Page numbers are mapped back to every chunk (1,106 chunks, about 720 characters on average). Settings were tuned over 33 combinations (`eval/semantic_chunking_report.md`); the original `RecursiveCharacterTextSplitter` (1,000 characters, 125 overlap, 918 chunks) is kept in `src/chunking.py` as the baseline.
 - **Embeddings:** `BAAI/bge-small-en-v1.5` from sentence-transformers, run locally, with the model's recommended query prefix for questions.
 - **Vector store:** ChromaDB, persisted locally, cosine distance.
 - **Generation:** Gemini through `langchain-google-genai`, temperature 0. The prompt requires a bracketed citation after every claim and the reply "The provided sources do not contain this information." when the answer isn't in the sources. Citations to source numbers that weren't retrieved are discarded.
 - **Error handling:** tenacity retries rate limits (429), server errors (500, 502, 503, 504), timeouts and dropped connections with randomized exponential backoff (up to 6 attempts), and fails immediately on errors that can't succeed on retry, such as a bad key. The API key is read from `.env` or Colab Secrets and never printed.
+- **Reranking:** Chroma returns the 20 closest chunks, then a local cross-encoder (`BAAI/bge-reranker-base`, `src/reranker.py`) reads each one together with the question and keeps the best 5 (about 5 s per question on a laptop CPU; `rerank=False` skips it).
 - **Shared interface:** `answer(question, k=5)` returns the answer, its citations, and every retrieved source, so the evaluation scripts and the Colab notebook all use the same code path.
 
 **Evaluation setup**
@@ -163,10 +165,15 @@ question
 | Configuration | Chunks | hit@1 | hit@3 | hit@5 | MRR | Paper hit@5 |
 |---------------|-------:|------:|------:|------:|----:|------------:|
 | Before ReAct text fix | 918 | 0.10 | 0.33 | 0.53 | 0.25 | 0.97 |
-| **Current pipeline** | **918** | **0.10** | **0.33** | **0.57** | **0.26** | **0.97** |
+| Recursive chunks (1,000 / 125) | 918 | 0.10 | 0.33 | 0.57 | 0.26 | 0.97 |
 | Bibliography chunks removed | 736 | 0.10 | 0.33 | 0.57 | 0.26 | 0.97 |
+| Semantic chunks, no reranker | 1,106 | 0.20 | 0.43 | 0.60 | 0.34 | 1.00 |
+| **Semantic chunks + reranker bge-reranker-base (current pipeline)** | **1,106** | **0.33** | - | **0.63** | **0.44** | - |
+| Recursive chunks + reranker ms-marco-MiniLM (for comparison) | 918 | 0.27 | 0.63 | 0.73 | 0.46 | - |
  
 **Key findings**
+- **Semantic chunking (November)** doubled how often the exact passage is ranked first (10% to 20%) and found the right paper for every question, at the cost of more, smaller chunks. With the same amount of text sent to Gemini it finds the passage about as often as recursive chunks, and the buffer size (how many neighbouring sentences are compared) mattered far more than the breakpoint threshold. Details: `eval/semantic_chunking_report.md`.
+- **A cross-encoder reranker helps most on recursive chunks** (passage in top 5: 57% to 73%); on semantic chunks the gain is smaller (bge-reranker-base: ranked first 20% to 33%, about 5 s per question on CPU). It is on by default in `answer()` (retrieve 20, rerank, keep 5); pass `rerank=False` (or `--no-rerank` on the command line) for the faster path.
 - **Retrieval finds the right paper almost every time (97%), but not always the right passage (57%).** The exact passage is ranked first only 10% of the time, so the most useful improvement for November is retrieving and ranking the precise passage, which is also the target our Challenge Advisor set.
 - **Cleaning matters.** Fixing the scrambled ReAct appendix text alone raised exact-passage retrieval by 4 points.
 - **Bibliography chunks were not hurting retrieval** on this set. None appeared in the top 5 for any question, with or without filtering.
@@ -183,12 +190,11 @@ question
 
 **November plan**
 - Run the 40 ground-truth questions and the 10 unanswerable questions through the full pipeline with the answer-quality checks.
-- Switch from recursive to semantic chunking and compare retrieval accuracy against the current approach, tuning chunk size, overlap and breakpoint settings.
+- ~~Switch from recursive to semantic chunking~~ Done: semantic chunking with tuned breakpoint threshold, buffer size and min/max chunk size (`eval/semantic_chunking_report.md`). A cross-encoder reranker (`BAAI/bge-reranker-base`) now reorders the top 20 chunks by default.
 - Tune the prompt and the number of retrieved chunks (k) to improve citation accuracy.
 - Run every configuration through the same evaluation and document the best one.
 
 **With more time**
-- Local reranking (for example FlashRank or a cross-encoder) to rank the exact passage higher without extra API calls.
 - Agentic self-correction with LangGraph: an evaluator step that rewrites the query and retrieves again when the context looks irrelevant.
 - A lightweight Gradio interface for the human-in-the-loop memo approval step.
 - A larger paper corpus and ground-truth Q&A set.

@@ -14,8 +14,13 @@ appendices after the bibliography (ReAct trajectories, Self-RAG details,
 prompt templates...) are kept -- unlike clean_full_text, which cuts
 everything after 'References'.
 
+Since November the pipeline uses semantic chunks (src/semantic_chunking.py ->
+data/chunks.json). This recursive chunker is kept as the baseline for
+comparison and writes to data/chunks_recursive.json by default, so running it
+does not overwrite the pipeline's chunks.
+
 Usage (from the repo root):
-    python src/chunking.py                    # same output as the notebook
+    python src/chunking.py                    # same output as the notebook -> data/chunks_recursive.json
     python src/chunking.py --drop-references  # also filter bibliography chunks
 """
 import argparse
@@ -29,7 +34,8 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 ROOT = Path(__file__).resolve().parent.parent
 CLEAN_PATH = ROOT / "data" / "cleaned_papers_text.json"
-CHUNKS_PATH = ROOT / "data" / "chunks.json"
+CHUNKS_PATH = ROOT / "data" / "chunks.json"  # pipeline chunks (written by semantic_chunking.py)
+RECURSIVE_PATH = ROOT / "data" / "chunks_recursive.json"
 
 CHUNK_SIZE = 1000
 CHUNK_OVERLAP = 125
@@ -106,7 +112,7 @@ def chunk_papers(papers, drop_references=False):
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--drop-references", action="store_true")
-    ap.add_argument("--out", default=str(CHUNKS_PATH))
+    ap.add_argument("--out", default=str(RECURSIVE_PATH))
     args = ap.parse_args()
     with open(CLEAN_PATH, "r", encoding="utf-8") as f:
         papers = json.load(f)
