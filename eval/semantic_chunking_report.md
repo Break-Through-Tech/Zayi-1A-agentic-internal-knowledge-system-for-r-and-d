@@ -10,7 +10,7 @@ Questions: 30 Q&A pairs with evidence phrases (`eval/qa_pairs.json`) and 40 grou
 <!-- conclusion: hand-written, kept on re-run -->
 ## Conclusion
 
-**1. Semantic chunking: tested, not swapped in (yet).**
+**1. Semantic chunking: swapped into the pipeline** (`data/chunks.json`, as our Challenge Advisor asked), with the settings below.
 
 | | chunks | hit@1 | hit@5 | MRR | hit@budget | GT paper hit@1 |
 |---|---|---|---|---|---|---|
@@ -21,7 +21,8 @@ Questions: 30 Q&A pairs with evidence phrases (`eval/qa_pairs.json`) and 40 grou
 - **Buffer size** mattered most: comparing each sentence with 3 neighbours on each side (buf=3) beat buf=0 clearly (MRR 0.33 vs 0.14 at pct=80). Single sentences are too noisy to detect topic changes.
 - **min_chunk_size** 250-500 helps (stops tiny heading-only chunks); **max_chunk_size** 1000 hurts badly (cuts answers in half), 1500 is best: same results as 2000 but only 9 chunks over the 512-token limit instead of 22.
 - Semantic chunks put the right chunk at rank 1 twice as often, but when the same amount of text (5,000 chars) is sent to Gemini they find it **no more often** (hit@budget 0.57 = 0.57), and they find the right *paper* slightly less often on Jose's 40 questions (0.80 vs 0.85).
-- With 30 questions, one question = 0.03, so most differences here are 1-3 questions. Not enough to justify re-chunking and rebuilding the store that everyone's evaluation uses.
+- With 30 questions, one question = 0.03, so most differences here are 1-3 questions.
+- Through the rebuilt Chroma store the pipeline gives exactly these numbers (hit@1 0.20, hit@5 0.60, MRR 0.34) and paper hit@5 = 1.00 on the 30 questions (was 0.97).
 
 **2. Reranker (stretch): clear win on the current chunks.** Retrieve 20 with bge-small, rerank with a cross-encoder, keep 5:
 
@@ -31,9 +32,17 @@ Questions: 30 Q&A pairs with evidence phrases (`eval/qa_pairs.json`) and 40 grou
 | + ms-marco-MiniLM-L6-v2 | 0.27 | 0.73 | 0.46 | 0.90 | ~0.6 s |
 | + bge-reranker-base | 0.43 | 0.73 | 0.54 | 0.90 | ~6 s |
 
-Reranking helped the current chunks much more than the semantic ones. Recommendation: keep the current chunks and turn on the reranker (`answer(q, rerank=True)`, default model ms-marco-MiniLM-L6-v2 because it is 10x faster; bge-reranker-base is better at rank 1 if speed does not matter).
+On the semantic chunks now in the pipeline (pct=80 buf=3 min=500 max=1500):
 
-Next: check with the team before making `rerank=True` the default in `answer()` (it changes everyone's run_qa results), and re-test semantic chunking if the Q&A set grows.
+| | hit@1 | hit@5 | MRR | hit@budget | extra time / question (CPU) |
+|---|---|---|---|---|---|
+| semantic, no reranker | 0.20 | 0.60 | 0.34 | 0.57 | - |
+| + ms-marco-MiniLM-L6-v2 | 0.20 | 0.60 | 0.36 | 0.60 | ~0.7 s |
+| + bge-reranker-base | 0.33 | 0.63 | 0.44 | 0.63 | ~5 s |
+
+Reranking helps recursive chunks much more than semantic ones (semantic chunks already group related sentences, so the first ranking is better to begin with). The reranker stays optional (`answer(q, rerank=True)`); on semantic chunks `bge-reranker-base` is the one worth using (`CrossEncoderReranker("BAAI/bge-reranker-base")`).
+
+Next: decide as a team whether to turn reranking on by default (it changes everyone's run_qa results and adds ~5 s per question), and re-test chunking if the Q&A set grows.
 <!-- end conclusion -->
 
 ## Baseline vs best semantic settings

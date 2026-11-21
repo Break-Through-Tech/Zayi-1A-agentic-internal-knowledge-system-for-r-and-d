@@ -24,14 +24,15 @@ How it works, per paper:
      distance, until every piece fits (a single huge "sentence", e.g. a table,
      falls back to RecursiveCharacterTextSplitter).
 
-Usage (from the repo root):
-    python src/semantic_chunking.py                          # tuned defaults -> data/chunks_semantic.json
-    python src/semantic_chunking.py --out data/chunks.json   # swap it into the pipeline
-    python src/semantic_chunking.py --amount 90 --buffer-size 1 --min-chunk-size 200 --max-chunk-size 1500
-Parameters were chosen with eval/tune_semantic_chunking.py. Result: semantic chunks
-rank the right chunk first more often, but with the same amount of context they
-find it no more often than the current chunks, so data/chunks.json is NOT
-swapped yet -- see the conclusion in eval/semantic_chunking_report.md.
+This is the pipeline's chunker (it replaced the RecursiveCharacterTextSplitter
+chunks of src/chunking.py, which is kept as the baseline).
+
+Usage (from the repo root; ~3 min on CPU, then rebuild the store):
+    python src/semantic_chunking.py          # tuned defaults -> data/chunks.json
+    python src/vector_store.py build
+    python src/semantic_chunking.py --amount 90 --buffer-size 1 --out data/chunks_try.json   # experiment
+Parameters were chosen with eval/tune_semantic_chunking.py; results and the
+trade-offs are in eval/semantic_chunking_report.md.
 """
 import argparse
 import bisect
@@ -48,7 +49,7 @@ import chunking
 import vector_store
 
 ROOT = Path(__file__).resolve().parent.parent
-OUT_PATH = ROOT / "data" / "chunks_semantic.json"
+OUT_PATH = chunking.CHUNKS_PATH  # data/chunks.json -- the pipeline's chunks
 
 # Same sentence rule as SemanticChunker: split after . ? ! followed by whitespace
 SENTENCE_RE = re.compile(r"(?<=[.?!])\s+")
